@@ -1,0 +1,124 @@
+<div style="padding-bottom: 0px" class="modal-content">
+  <div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card-panel">
+        <h4 class="header2">{{contentModal}} Intervencion</h4>
+        <div class="divider" style="width: 100%"></div>
+        <div style="" class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+              <div class="nav-wrapper">                
+                <div class="input-field col s12 m12">
+                  <i class="mdi-editor-mode-edit prefix"></i>
+                  <textarea ng-model="nuevaIntervencion.Administrativo" name="nuevaIntervencionAdministrativo" id="nuevaIntervencionAdministrativo" type="text" class="validate materialize-textarea" required="" aria-required="true"></textarea>
+                  <label for="nuevaIntervencionAdministrativo" class="">Control Administrativo</label>
+                </div>
+
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12 m6">
+                  <h5 class="header2" style="margin-top: 10px;">Eliminacion</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaIntervencion.Eliminacion" id="nuevaIntervencionEliminacionSi" value="si" data-error=".errorTxtEliminacion" name="nuevaIntervencionEliminacion" required="" aria-required="true" class="valid" aria-describedby="cgender-error">
+                    <label for="nuevaIntervencionEliminacionSi" class="active">Si</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaIntervencion.Eliminacion" id="nuevaIntervencionEliminacionNo" value="no" name="nuevaIntervencionEliminacion" class="valid">
+                    <label for="nuevaIntervencionEliminacionNo"  class="active">No</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaIntervencion.Eliminacion" id="nuevaIntervencionEliminacionNA" value="na" name="nuevaIntervencionEliminacion" class="valid">
+                    <label for="nuevaIntervencionEliminacionNA"  class="active">N/A</label>
+                    <br>
+                    <!-- <div class="input-field col s12 m12" ng-show = "nuevaIntervencion.Eliminacion == 'si'">
+                      <input ng-model="nuevaIntervencion.NombreEliminacion" name="nuevaIntervencionNombreEliminacion" id="nuevaIntervencionNombreEliminacion" type="text">
+                      <label for="nuevaIntervencionNombreEliminacion">Eliminacion</label>
+                    </div> -->
+                    <div>
+                      <div class="errorTxtEliminacion"><div id="cgender-error" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-field col s12 m6">
+                  <h5 class="header2" style="margin-top: 10px;">Sustitucion</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaIntervencion.Sustitucion" id="nuevaIntervencionSustitucionSi" value="si" data-error=".errorTxtSustitucion" name="nuevaIntervencionSustitucion" required="" aria-required="true" class="valid" aria-describedby="cgender-error">
+                    <label for="nuevaIntervencionSustitucionSi" class="active">Si</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaIntervencion.Sustitucion" id="nuevaIntervencionSustitucionNo" value="no" name="nuevaIntervencionSustitucion" class="valid">
+                    <label for="nuevaIntervencionSustitucionNo"  class="active">No</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaIntervencion.Sustitucion" id="nuevaIntervencionSustitucionNA" value="na" name="nuevaIntervencionSustitucion" class="valid">
+                    <label for="nuevaIntervencionSustitucionNA"  class="active">N/A</label>
+                    <br>
+                    <!-- <div class="input-field col s12 m12" ng-show = "nuevaIntervencion.Sustitucion == 'si'">
+                      <input ng-model="nuevaIntervencion.NombreSustitucion" name="nuevaIntervencionNombreSustitucion" id="nuevaIntervencionNombreSustitucion" type="text">
+                      <label for="nuevaIntervencionNombreSustitucion">Sustitucion</label>
+                    </div> -->
+                    <div>
+                      <div class="errorTxtSustitucion"><div id="cgender-error" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-field col s12 m6">
+                  <h5 class="header2" style="margin-top: 10px;">Control Ingenieria</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaIntervencion.Ingenieria" id="nuevaIntervencionIngenieriaSi" value="si" data-error=".errorTxtIngenieria" name="nuevaIntervencionIngenieria" required="" aria-required="true" class="valid" aria-describedby="cgender-error">
+                    <label for="nuevaIntervencionIngenieriaSi" class="active">Si</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaIntervencion.Ingenieria" id="nuevaIntervencionIngenieriaNo" value="no" name="nuevaIntervencionIngenieria" class="valid">
+                    <label for="nuevaIntervencionIngenieriaNo"  class="active">No</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaIntervencion.Ingenieria" id="nuevaIntervencionIngenieriaNA" value="na" name="nuevaIntervencionIngenieria" class="valid">
+                    <label for="nuevaIntervencionIngenieriaNA"  class="active">N/A</label>
+                    <br>
+                    <!-- <div class="input-field col s12 m12" ng-show = "nuevaIntervencion.Ingenieria == 'si'">
+                      <input ng-model="nuevaIntervencion.NombreIngenieria" name="nuevaIntervencionNombreIngenieria" id="nuevaIntervencionNombreIngenieria" type="text">
+                      <label for="nuevaIntervencionNombreIngenieria">Control Ingenieria</label>
+                    </div> -->
+                    <div>
+                      <div class="errorTxtIngenieria"><div id="cgender-error" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-field col s12 m6">
+                  <h5 class="header2" style="margin-top: 10px;">Equipos / EPP</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaIntervencion.Epp" id="nuevaIntervencionEppSi" value="si" data-error=".errorTxtEpp" name="nuevaIntervencionEpp" required="" aria-required="true" class="valid" aria-describedby="cgender-error">
+                    <label for="nuevaIntervencionEppSi" class="active">Si</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaIntervencion.Epp" id="nuevaIntervencionEppNo" value="no" name="nuevaIntervencionEpp" class="valid">
+                    <label for="nuevaIntervencionEppNo"  class="active">No</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaIntervencion.Epp" id="nuevaIntervencionEppNA" value="na" name="nuevaIntervencionEpp" class="valid">
+                    <label for="nuevaIntervencionEppNA"  class="active">N/A</label>
+                    <br>
+                    <div class="input-field col s12 m12" ng-show = "nuevaIntervencion.Epp == 'si'">
+                      <input ng-model="nuevaIntervencion.NombreEpp" name="nuevaIntervencionNombreEpp" id="nuevaIntervencionNombreEpp" type="text">
+                      <label for="nuevaIntervencionNombreEpp" class="active">Nombre Epp</label>
+                    </div>
+                    <div>
+                      <div class="errorTxtEpp"><div id="cgender-error" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12" style="margin-bottom: 10px;">
+                  <button id="crear" class="btn cyan waves-effect waves-light right" ng-click="finModal()" name="action">Listo
+                    <i class="mdi-content-send right"></i>
+                  </button>
+                  <!-- <button ng-show="contentModal == 'Nuevo'" style="margin-right: 10px;" class="btn cyan waves-effect waves-light right" ng-click="otroProcesoModal()" name="action">Agregar Otro
+                    <i class="mdi-content-send right"></i>
+                  </button> -->
+                  <button class="btn cyan waves-effect waves-light left" ng-click="cancelarModal()">Cancelar
+                    <i class="mdi-content-send left"></i>
+                  </button>
+                </div> 
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

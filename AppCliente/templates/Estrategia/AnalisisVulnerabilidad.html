@@ -1,0 +1,109 @@
+<section id="content">
+  <div id="breadcrumbs-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <ol class="breadcrumbs">
+              <li class="active">Analisis de Vulnerabilidad</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <div class="card-panel">
+                      <h4 class="header" style="text-align: center">Analisis de Vulnerabilidad</h4>
+                      <table class="centered hoverable bordered">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Puntal</th>
+                            <th>Amenaza</th>
+                            <th>Consecuencia</th>
+                            <th>Impacto</th>
+                            <th>Probabilidad</th>
+                            <th>Reaccion</th>
+                            <th>Vulnerabilidad</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="puntal in analisis">
+                            <td style="width: 5%;">
+                              <a ng-click="borrarPuntal($index)" class="btn-floating waves-effect waves-light red lighten-2"><i class="mdi-action-delete"></i></a>
+                            </td>
+                            <td style="width: 15%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="puntal.Puntal" name="{{'puntal'+$index}}" id="{{'puntal'+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                <label class="widthauto" for="{{'puntal'+$index}}">Puntal {{$index+1}}</label>
+                              </div>
+                            </td>
+                            <td style="width: 15%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="puntal.Amenaza" name="{{'amenaza'+$index}}" id="{{'amenaza'+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                <label class="widthauto" for="{{'amenaza'+$index}}">Amenaza {{$index+1}}</label>
+                              </div>
+                            </td>
+                            <td style="width: 15%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="puntal.Conesecuencia" name="{{'conesecuencia'+$index}}" id="{{'conesecuencia'+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                <label class="widthauto" for="{{'conesecuencia'+$index}}">Conesecuencia {{$index+1}}</label>
+                              </div>
+                            </td>
+
+                            <td style="width: 15%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="puntal.Impacto" name="{{'impacto'+$index}}" id="{{'impacto'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto" for="{{'impacto'+$index}}">Impacto {{$index+1}}</label>
+                              </div>
+                            </td>
+                            <td style="width: 15%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="puntal.Probabilidad" name="{{'probabilidad'+$index}}" id="{{'probabilidad'+$index}}" type="text" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="1" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 1">
+                                <label class="widthauto" for="{{'probabilidad'+$index}}">Probabilidad {{$index+1}}</label>
+                              </div>
+                            </td>
+                            <td style="width: 15%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="puntal.Reaccion" name="{{'reaccion'+$index}}" id="{{'reaccion'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto" for="{{'reaccion'+$index}}">Reaccion {{$index+1}}</label>
+                              </div>
+                            </td>
+                            
+                            <td style="width: 5%;">
+                              {{getVulnerabilidad($index)}}
+                            </td>
+                            
+                          </tr>
+                          <tr>
+                            <td style="">
+                              <a ng-click="agregarPuntal()" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s6 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light fondoDexcon accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                  </div>
+                  <div class="col s6 m6 l6 right">
+                    <button ng-click="anterior()" class="waves-effect waves-light fondoDexcon accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+
+</section>

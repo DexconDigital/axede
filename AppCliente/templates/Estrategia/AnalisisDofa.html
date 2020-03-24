@@ -1,0 +1,103 @@
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">Analisis Dofa</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+                <div class="row">
+                  <!-- <div class="col s12 m12 l12"> -->
+                    <div ng-repeat="matriz in analisisDofa.DofaItems"">
+                    <!-- <div> -->
+                      <div class="card-panel">
+                        <h4 class="header" style="text-align: center">{{matriz.Nombre}}</h4>
+                        <div class="col s6 m6 l6" ng-repeat="columna in analisisDofa.Seleccion[matriz.Alias]">
+                          <nav class="red">
+                            <div class="nav-wrapper">
+                              <div class="left col s12 m12 l12">
+                                <h5>{{GetNombre(matriz.Alias[$index])}}</h5>
+                              </div>
+                            </div>
+                          </nav>
+                          <table class="hoverable bordered">
+                            <tbody ng-repeat="item in analisisDofa.Items" ng-if="AnalizarItemColumna(item,matriz.Alias,$parent.$index)">
+                              <tr>
+                                <td>
+                                  <input type="checkbox" ng-model="analisisDofa.Seleccion[matriz.Alias][matriz.Alias[$parent.$parent.$index]][item.Id]" class="checkbox valid" id="{{matriz.Alias+item.Id}}" name="{{matriz.Alias+item.Id}}">
+                                  <label for="{{matriz.Alias+item.Id}}">{{item.Descripcion+","+item.Id}}</label>
+                                  <!-- <label for="{{matriz.Alias+item.Id}}">{{item.Descripcion+","+item.Id}}</label> -->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        <!-- </div> -->
+                        </div>
+
+                        <!-- <div class="col s6 m6 l6">
+                          <nav class="red">
+                            <div class="nav-wrapper">
+                              <div class="left col s12 m12 l12">
+                                <h5>{{getColumnaB(item.Nombre)}}</h5>
+                              </div>
+                            </div>
+                          </nav>
+                          <table class="hoverable bordered">
+                            <tbody ng-repeat="item in analisisDofa.Items" ng-if="AnalizarItemColumnaB(item,'DO')">
+                              <tr>
+                                <td>
+                                  <input type="checkbox" ng-model="analisisDofa.Seleccion['DO']['DO'[1]][item.Id]" class="checkbox valid" id="{{'DO'+$index}}" name="{{'DO'+$index}}">
+                                  <label for="{{'DO'+$index}}">{{item.Descripcion+$index}}</label>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table> -->
+                        <!-- </div> -->
+
+                        <table class="centered hoverable bordered">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th style="border: 1px solid;" ng-repeat="item in analisisDofa.Items" ng-if="analisisDofa.Seleccion[matriz.Alias][matriz.Alias[0]][item.Id]">{{item.Descripcion}}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr ng-repeat="item in analisisDofa.Items" ng-if="analisisDofa.Seleccion[matriz.Alias][matriz.Alias[1]][item.Id]">
+                              <th style="border: 1px solid;">{{item.Descripcion}}</th>
+                              <th style="border: 1px solid;" ng-repeat="item2 in analisisDofa.Items" ng-if="analisisDofa.Seleccion[matriz.Alias][matriz.Alias[0]][item2.Id]">
+                                <div class="input-field col s12 m12">
+                                  <i class="mdi-editor-mode-edit prefix"></i>
+                                  <textarea ng-model="analisisDofa.Matriz[item2.Id][item.Id]" name="{{item2.Id+','+item.Id}}" id="{{item2.Id+','+item.Id}}" type="text" class="validate materialize-textarea"></textarea>
+                                  <label for="{{item2.Id+','+item.Id}}" class="">Analisis</label>
+                                </div>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light red accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                  </div>
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="anterior()" class="waves-effect waves-light red accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+
+</section>

@@ -1,0 +1,87 @@
+<section id="content">
+  <div id="breadcrumbs-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <ol class="breadcrumbs">
+              <li class="active">Principios Corporativos</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+            <div class="row margin myDiv">
+              <div class="nav-wrapper">                
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Grupos de Referencia</h4>
+                <div class="input-field col s12 m12">
+                  <div class="input-field col s12 m12">
+                    <i class="mdi-action-account-circle prefix letraDexcon"></i>
+                    <input ng-model="nuevosPrincipios.CantidadGruposdeReferencia" name="nuevosPrincipiosCantidadGruposdeReferencia" id="nuevosPrincipiosCantidadGruposdeReferencia" type="number" min="1" max="10" class="validate">
+                    <label class="active" for="nuevosPrincipiosCantidadGruposdeReferencia">Cantidad de Grupos de Referencia</label>
+                  </div>
+                  <div class="input-field col s12 m12" ng-repeat="grupodeReferencia in nuevosPrincipios.GruposdeReferencia track by $index">
+                    <i class="mdi-action-account-circle prefix letraDexcon"></i>
+                    <input ng-model="nuevosPrincipios.GruposdeReferencia[$index]" name="{{'nuevosPrincipiosGruposdeReferencia'+$index}}" id="{{'nuevosPrincipiosGruposdeReferencia'+$index}}" type="text" class="validate" data-rule-required="true">
+                    <label class="active" for="{{'nuevosPrincipiosGruposdeReferencia'+$index}}">Grupo de Referencia {{$index+1}}</label>
+                  </div>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Principios Corporativos</h4>
+                <div class="input-field col s12 m12" style="margin-top: 0px">
+                  <div class="input-field col s12 m4">
+                    <i class="mdi-action-account-circle prefix letraDexcon"></i>
+                    <input ng-model="nuevosPrincipios.CantidadPrincipiosCorporativos" name="nuevosPrincipiosCantidadPrincipiosCorporativos" id="nuevosPrincipiosCantidadPrincipiosCorporativos" type="number" min="1" max="10" class="validate">
+                    <label class="active" for="nuevosPrincipiosCantidadPrincipiosCorporativos">Cantidad de Principios Corporativos</label>
+                  </div>
+                  <div class="input-field col s12 m12" ng-repeat="principioCorporativo in nuevosPrincipios.PrincipiosCorporativos track by $index">
+                    <i class="mdi-action-account-circle prefix letraDexcon"></i>
+                    <input ng-model="nuevosPrincipios.PrincipiosCorporativos[$index]" name="{{'nuevosPrincipiosPrincipiosCorporativos'+$index}}" id="{{'nuevosPrincipiosPrincipiosCorporativos'+$index}}" type="text" class="validate" data-rule-required="true">
+                    <label class="active" for="{{'nuevosPrincipiosPrincipiosCorporativos'+$index}}">Principio Corporativo {{$index+1}}</label>
+                  </div>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Matriz Axiologica</h4>
+                <table class="hoverable centered bordered ">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th style="width: {{90/nuevosPrincipios.GruposdeReferencia.length}}%; border: 1px solid;" ng-repeat="grupodeReferencia in nuevosPrincipios.GruposdeReferencia track by $index">{{grupodeReferencia}}</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="principioCorporativo in nuevosPrincipios.PrincipiosCorporativos track by $index">
+                      <th style="border: 1px solid;">{{principioCorporativo}}</th>
+                      <th style="border: 1px solid;" ng-repeat="grupodeReferencia in nuevosPrincipios.GruposdeReferencia track by $index"><input ng-model="nuevosPrincipios.Matriz[$parent.$index+''+$index]" id="{{$parent.$index+''+$index}}" type="number" min="0" max="1" class="validate" value="0"></th>
+                      <th style="border: 1px solid;">{{PorcentajePrincipio($index)}} %</th>
+                    </tr>
+                    <tr>
+                      <th style="border: 1px solid;"></th>
+                      <th style="border: 1px solid;" ng-repeat="grupodeReferencia in nuevosPrincipios.GruposdeReferencia track by $index">{{PorcentajeGrupo($index)}} %</th>
+                      <th style="border: 1px solid;"></th>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Colocar 1 o 0</p>
+
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12" style="margin-bottom: 10px;">                
+                <button ng-click="siguiente()" class="btn fondoDexcon waves-effect waves-light right" type="submit" name="action">Siguiente
+                    <i class="mdi-image-navigate-next right"></i>
+                  </button>
+                <button ng-click="anterior()" class="btn fondoDexcon waves-effect waves-light left" type="submit" name="action">Anterior
+                  <i class="mdi-image-navigate-before left"></i>
+                </button>
+                </div> 
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+</div>
+</section>

@@ -1,0 +1,57 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li>Detalle Peligro</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <div class="col offset-s2 s8">
+            <div class="nav-wrapper collection z-depth-1">                
+              <h4 class="header2" style="text-align: center">Datos Principales</h4>
+              <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Descripcion</div>
+                <div class="col s12 grey-text text-darken-4 left-align">{{nuevoPeligro.Descripcion}}</div>
+              </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Clasificacion</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoPeligro.Clasificacion}}</div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Efectos</div>
+                  <div class="col s12 grey-text text-darken-4 left-align" ng-repeat='efecto in nuevoPeligro.Efectos'>{{efecto}}</div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Consecuencia</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{consecuencias[nuevoPeligro.Consecuencia]}}</div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Requisito Legal</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoPeligro.Requisito}}</div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Peores Consecuencias</div>
+                  <div class="col s12 grey-text text-darken-4 left-align" ng-repeat='peor in nuevoPeligro.PeorConsecuencia'>{{peor}}</div>
+                </div>
+            </div>
+            <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+              <i class="mdi-image-navigate-before left"></i>
+            </button>
+            <button ng-click="editarPeligro(nuevoPeligro)" class="btn cyan waves-effect waves-light right" type="submit" name="action">Editar
+              <i class="mdi-image-navigate-next right"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

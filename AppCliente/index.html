@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- <link rel="manifest" href="manifest.json"> -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans">
+
+    <!-- CORE CSS-->        
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/morris.css" rel="stylesheet">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <!-- <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->    
+    <link href="css/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/jquery.dataTables.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/chartist.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/fullcalendar/css/fullcalendar.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+
+    <!-- Morris Library -->
+    <script type="text/javascript" src="js/plugins/morris/raphael-min.js"></script>
+    <script type="text/javascript" src="js/plugins/morris/morris.min.js"></script>
+
+    <!-- ionic/angularjs js -->
+    <script src="js/plugins/angular.js"></script>
+    <script src="js/plugins/angular-ui-router.js"></script>
+    <script src="js/plugins/angular-datatables.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- <script src="cordova.js"></script> -->
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllerPrincipal.js"></script>
+
+    <!-- login -->
+    <script src="js/Inicio/Ruta.js"></script>
+    <script src="js/Inicio/Inicio.js"></script>
+    <script src="js/Inicio/Login.js"></script>
+    <script src="js/Inicio/Recuperar.js"></script>
+    <script src="js/Inicio/Registrar.js"></script>
+
+    <!-- cliente -->
+    <script src="js/Cliente/Main.js"></script>
+    <script src="js/Cliente/DetallePeligroGtc.js"></script>
+    <script src="js/Cliente/ResumenGtc.js"></script>
+    <script src="js/Cliente/Kpi.js"></script>
+
+    <!-- Empresa -->
+    <script src="js/Empresa/config.js"></script>
+    <script src="js/Empresa/controller.js"></script>
+
+    <!-- estrategia -->
+    <script src="js/Estrategia/Ruta.js"></script>
+    <script src="js/Estrategia/Ctrl.js"></script>
+    <script src="js/Estrategia/Pasos.js"></script>
+    <script src="js/Estrategia/Empresa.js"></script>
+    <script src="js/Estrategia/PrincipiosCorporativos.js"></script>
+    <script src="js/Estrategia/MisionVision.js"></script>
+    <script src="js/Estrategia/Diagnostico.js"></script>
+    <script src="js/Estrategia/DofaResumido.js"></script>
+    <script src="js/Estrategia/FuerzasPorter.js"></script>
+    <script src="js/Estrategia/AnalisisDofa.js"></script>
+    <script src="js/Estrategia/AnalisisVulnerabilidad.js"></script>
+    <script src="js/Estrategia/MatrizBCG.js"></script>
+    <script src="js/Estrategia/MatrizMPC.js"></script>
+    <script src="js/Estrategia/EstrategiasDireccionamiento.js"></script>
+    <script src="js/Estrategia/ConductoresValor.js"></script>
+    <script src="js/Estrategia/Palancas.js"></script>
+    <script src="js/Estrategia/Estrategias.js"></script>
+    <script src="js/Estrategia/Iniciativas.js"></script>
+    <script src="js/Estrategia/Kpi.js"></script>
+
+    <!-- gtc -->
+    <script src="js/Gtc/Ruta.js"></script>
+    <script src="js/Gtc/Ctrl.js"></script>
+    <script src="js/Gtc/Pasos.js"></script>
+    <script src="js/Gtc/Nuevo.js"></script>
+    <script src="js/Gtc/Zonas.js"></script>
+    <script src="js/Gtc/Riesgos.js"></script>
+    <script src="js/Gtc/Intervencion.js"></script>
+
+    <!-- gtc resumen -->
+    <script src="js/GtcResumen/Main.js"></script>
+    <script src="js/GtcResumen/Lista.js"></script>
+    <script src="js/GtcResumen/Resumen.js"></script>
+    <script src="js/GtcResumen/Detalle.js"></script>
+
+    <!-- peligros -->
+    <script src="js/Peligros/Main.js"></script>
+    <script src="js/Peligros/Lista.js"></script>
+    <script src="js/Peligros/Nuevo.js"></script>
+    <script src="js/Peligros/Detalle.js"></script>
+
+    <!-- profesionales -->
+    <script src="js/Profesionales/config.js"></script>
+    <script src="js/Profesionales/controller.js"></script>
+
+    <script src="js/services.js"></script>
+    <script src="js/constants.js"></script>
+  </head>
+  <body ng-app="dexcon" style="height: 100%">
+    <div ui-view name="menuContent"></div>  
+  </body>
+  <!--materialize js-->
+  <script type="text/javascript" src="js/plugins/materialize.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="js/plugins/perfect-scrollbar.min.js"></script> 
+  <!-- validate -->
+  <script type="text/javascript" src="js/plugins/jquery.validate.min.js"></script> 
+  <!-- chartist -->
+  <script type="text/javascript" src="js/plugins/chartist.js"></script>
+  <!-- Calendar Script -->
+  <script type="text/javascript" src="js/plugins/fullcalendar/lib/jquery-ui.custom.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/lib/moment.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/js/fullcalendar.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/fullcalendar-script.js"></script>
+</html>

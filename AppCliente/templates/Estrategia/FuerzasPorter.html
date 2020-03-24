@@ -1,0 +1,99 @@
+<section id="content">
+  <div id="breadcrumbs-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <ol class="breadcrumbs">
+              <li class="active">Fuerzas de Porter</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+                <div class="row">
+                  <!-- <h4 class="header2">Dofa Resumido</h4> -->
+                  <div class="col s12 m12 l12">
+                    <div class="card-panel">
+                      <h4 class="header" style="text-align: center">DIAGNOSTICO ESTRATEGICO SEGÚN MICHAEL PORTER</h4>
+                      <table class="centered hoverable bordered">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <!-- <th>LAS CINCO FUERZAS DE MICHAEL PORTER</th> -->
+                            <th>DIAGNOSTICO DE LA COMPAÑÍA</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="width: 10%;">1</td>
+                            <td style="width: 90%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="fuerzasPorter.F1" name="fuerzasPorterF1" id="fuerzasPorterF1" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="fuerzasPorterF1" class="">La Amenaza de entrada de nuevos competidores</label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: 10%;">2</td>
+                            <td style="width: 90%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="fuerzasPorter.F2" name="fuerzasPorterF2" id="fuerzasPorterF2" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="fuerzasPorterF2" class="">La rivalidad entre los competidores</label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: 10%;">3</td>
+                            <td style="width: 90%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="fuerzasPorter.F3" name="fuerzasPorterF3" id="fuerzasPorterF3" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="fuerzasPorterF3" class="">El Poder de negociación de los proveedores</label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: 10%;">4</td>
+                            <td style="width: 90%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="fuerzasPorter.F4" name="fuerzasPorterF4" id="fuerzasPorterF4" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="fuerzasPorterF4" class="">El Poder de negociación de los compradores</label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: 10%;">5</td>
+                            <td style="width: 90%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="fuerzasPorter.F5" name="fuerzasPorterF5" id="fuerzasPorterF5" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="fuerzasPorterF5" class="">La Amenaza de ingreso de productos sustitutos</label>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="divider" style="width: 100%"></div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s6 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light fondoDexcon accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                  </div>
+                  <div class="col s6 m6 l6 left">
+                    <button ng-click="anterior()" class="waves-effect waves-light fondoDexcon accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+
+</section>

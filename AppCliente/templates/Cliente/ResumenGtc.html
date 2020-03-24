@@ -1,0 +1,56 @@
+<section id="content">
+        
+<div id="breadcrumbs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li>Resumen GTC</li>
+            <li class="active">Empresa</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ui-view></div>
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div id="table-datatables" class="col m10 offset-m1 l8 offset-l2">
+      <h4 class="header">{{clickedProyecto.NombreEmpresa}}</h4>
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="sample-chart-wrapper migris">
+              <!-- <div class="ct-chart ct-golden-section" id="chartResumenGtc"></div> -->
+              <div id="graph"></div>
+            </div>
+          </div>
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <table class="hoverable bordered" ng-repeat="resumen in resumenes">
+                <thead>
+                  <tr>
+                    <td><h5>{{resumen.Proceso}}</h5></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="peligro in resumen.Peligros">
+                    <td ng-class="colorNivelRiesgo(peligro)+' lighten-3'" ng-click="verPeligro(peligro)">{{peligro.Peligro}}<br>
+                    <a><span class="" style="color: black">Calificacion: {{getNivelRiesgo(peligro)}}</span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+            <button ng-click="anterior()" class="btn fondoDexcon waves-effect waves-light left" type="submit" name="action">
+                <i class="mdi-image-navigate-before left"></i>Anterior
+              </button>
+        </div>
+      </div> 
+    </div> 
+  </div> 
+</div> 
+<!--end container-->
+</section>

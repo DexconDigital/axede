@@ -1,0 +1,47 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">Mision y Vision</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+              <div class="nav-wrapper">                
+                <h4 class="header2">Mision</h4>
+                <div class="input-field col s12 m12">
+                  <i class="mdi-editor-mode-edit prefix"></i>
+                  <textarea ng-model="misionvision.Mision" name="misionvisionMision" id="misionvisionMision" type="text" class="validate materialize-textarea"></textarea>
+                  <label for="mision" class="">Mision</label>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Vision</h4>
+                <div class="input-field col s12 m12">
+                  <i class="mdi-editor-mode-edit prefix"></i>
+                  <textarea ng-model="misionvision.Vision" name="misionvisionVision" id="misionvisionVision" type="text" class="validate materialize-textarea"></textarea>
+                  <label for="vision" class="">Vision</label>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12" style="margin-bottom: 10px;">                
+                <button ng-click="siguiente()" class="btn cyan waves-effect waves-light right" type="submit" name="action">Siguiente
+                    <i class="mdi-image-navigate-next right"></i>
+                </button>
+                <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+                  <i class="mdi-image-navigate-before left"></i>
+                </button>
+                </div> 
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

@@ -1,0 +1,77 @@
+<section id="content">
+        
+<!--breadcrumbs start-->
+<div id="breadcrumbs-wrapper">
+    <!-- Search for small screen -->
+    <!-- <div class="header-search-wrapper grey hide-on-large-only">
+        <i class="mdi-action-search active"></i>
+        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+    </div> -->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li>Proyectos</li>
+            <li>Lista de {{clickedNorma.Nombre}}</li>
+            <li>{{clickedEmpresa.Nombre}}</li>
+            <li class="active">Zonas</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--breadcrumbs end-->
+
+
+<!--start container-->
+<div class="container">
+  <div class="section">
+    <!--DataTables example-->
+    <div class="row">
+      <div id="table-datatables" class="col m10 offset-m1 l8 offset-l2">
+      <h4 class="header">{{clickedEmpresa.Nombre}} | Caracterizacion de zonas</h4>
+        <div class="row">
+          <div class="col s12 m12 l12">
+          <a ng-click="modalNuevaEtapa()" class="waves-effect waves-light green lighten-2 btn right"><i class="mdi-social-group-add right"></i>Nueva Etapa</a>              
+          </div>
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <!-- <table id="tableCurso" datatable="ng" class="responsive-table display" cellspacing="0"> -->
+              <table class="hoverable bordered">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th style="text-align: center;width: 35%;">Proceso</th>
+                    <th style="text-align: center;width: 35%;">Zona/Lugar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="etapa in zonaEtapas">
+                    <td style="text-align: center;width: 10%;">
+                        <a ng-click="modalEditarEtapa(etapa.IdProcesos,etapa.IdZonas,etapa.IdEtapa)" class="btn-floating waves-effect waves-light orange lighten-2"><i class="mdi-editor-mode-edit"></i></a>
+                        <a ng-click="borrarEtapa(etapa.IdEtapa,$index)" class="btn-floating waves-effect waves-light red lighten-2"><i class="mdi-action-delete"></i></a>
+                      </td>
+                    <td ng-click="modalMostrarEtapa(etapa.IdEtapa)" style="text-align: center;width: 35%;">{{etapa.Proceso}}</td>
+                    <td ng-click="modalMostrarEtapa(etapa.IdEtapa)" style="text-align: center;width: 35%;">{{etapa.Zona}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div style="padding-top: 20px;" class="row">
+          <div class="col s12 m6 l6 right">
+            <button ng-click="siguiente()" class="waves-effect waves-light red accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+          </div>
+          <div class="col s12 m6 l6 right">
+            <button ng-click="anterior()" class="waves-effect waves-light red accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+          </div>
+        </div>
+        <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+        </div>
+      </div> 
+    </div> 
+<!--end container-->
+</section>

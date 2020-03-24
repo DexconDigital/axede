@@ -1,0 +1,58 @@
+<section id="content">
+  <div id="breadcrumbs-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <ol class="breadcrumbs">
+              <li>Mapa del Valor</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <div class="card-panel">
+                  <h4 class="header" style="text-align: center;color: black">Mapa del Valor</h4>
+                  <table datatable="ng" class="row-border hover responsive-table ">
+                    <thead>
+                      <tr>
+                        <th>Conductor</th>
+                        <th>Palanca</th>
+                        <th>Estrategia</th>
+                        <th>Iniciativa</th>
+                        <th>Actividad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="kpi in kpis"" ng-click="modalNuevoKpi(kpi.IdActividad,kpi.Kpi)">
+                        <td>{{kpi.ConductorValor}}</td>
+                        <td>{{kpi.Palanca}}</td>
+                        <td>{{kpi.Estrategia}}</td>
+                        <td>{{kpi.Iniciativa}}</td>
+                        <td>{{kpi.Actividad}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding-top: 20px;" class="row">
+              <div class="col s12 m6 l6 right">
+                <button ng-click="anterior()" class="waves-effect waves-light fondoDexcon accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModalKpi()" class="modal">
+
+    </div>
+</div>
+
+</section>

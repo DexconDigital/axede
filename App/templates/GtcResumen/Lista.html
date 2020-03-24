@@ -1,0 +1,64 @@
+<section id="content">
+        
+<!--breadcrumbs start-->
+<div id="breadcrumbs-wrapper">
+    <!-- Search for small screen -->
+    <!-- <div class="header-search-wrapper grey hide-on-large-only">
+        <i class="mdi-action-search active"></i>
+        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+    </div> -->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li>Proyectos</li>
+            <li class="active">Lista de {{clickedNorma.Nombre}}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--breadcrumbs end-->
+
+
+<!--start container-->
+<div class="container">
+  <div class="section">
+    <!--DataTables example-->
+    <div class="row">
+      <div id="table-datatables" class="col m10 offset-m1 l8 offset-l2">
+      <h4 class="header">{{clickedNorma.Nombre}}</h4>
+        <div class="row">
+          <div class="col s12 m6 l6">
+            <p>Seleccion un proyecto</p>
+          </div>
+          
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <!-- <table id="tableCurso" datatable="ng" class="responsive-table display" cellspacing="0"> -->
+              <table class="hoverable bordered">
+                <thead>
+                  <tr>
+                    <th style="text-align: center">Empresas</th>
+                    <th style="text-align: center">Contrato</th>
+                    <th style="text-align: center">Fecha inicial</th>
+                    <th style="text-align: center">Fecha Final</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="proyecto in proyectos">
+                    <td style="text-align: center" ng-click="editProyecto(proyecto)">{{proyecto.NombreEmpresa}}</td>
+                    <td style="text-align: center" ng-click="editProyecto(proyecto)">{{proyecto.NoContrato}}</td>
+                    <td style="text-align: center;width: 20%;" ng-click="editProyecto(proyecto)">{{proyecto.FechaInicio}}</td>
+                    <td style="text-align: center;width: 20%;" ng-click="editProyecto(proyecto)">{{proyecto.FechaFinal}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+<!--end container-->
+</section>

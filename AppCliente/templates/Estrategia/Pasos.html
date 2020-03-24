@@ -1,0 +1,155 @@
+<section id="content">
+        
+<div id="breadcrumbs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li>Planeacion Estrategia</li>
+            <li class="active">{{clickedEmpresa.Nombre}}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div id="table-datatables" class="col m10 offset-m1 l8 offset-l2">
+      <h4 class="header">{{clickedEmpresa.Nombre}}</h4>
+        <div class="row">
+          <div class="col s12 m6 l6">
+            <p style="color: white">Seleccione una etapa</p>
+          </div>
+          
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <nav class="fondoDexcon">
+                <div class="nav-wrapper">
+                  <div class="left col s12 m12 l12">
+                    <h5>Quienes Somos?</h5>
+                  </div>
+                </div>
+              </nav>
+              <table class="hoverable bordered">
+                <tbody>
+                  <tr>
+                    <td ng-click="empresa()">La Empresa</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="principiosCorporativos()">Principios Corporativos</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="misionvision('QuienesSomos')">Mision y Vision</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <nav class="fondoDexcon">
+                <div class="nav-wrapper">
+                  <div class="left col s12 m12 l12">
+                    <h5>Como Estamos Hoy?</h5>
+                  </div>
+                </div>
+              </nav>
+              <table class="hoverable bordered">
+                <tbody>
+                  <tr>
+                    <td ng-click="diagnostico('pci')">Diagnostico Interno(PCI)</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="diagnostico('pce')">Diagnostico Externo(PCE)</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="dofaResumido()">Dofa Resumido</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="fuerzasPorter()">5 Analisis de Porter</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="analisisDofa()">Analisis Dofa</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="analisisVulnerabilidad()">Analisis de Vulnerabilidad</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="matrizBCG()">Matriz BCG</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="matrizMPC()">Matriz Perfil Competitivo MPC</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <nav class="fondoDexcon">
+                <div class="nav-wrapper">
+                  <div class="left col s12 m12 l12">
+                    <h5>Donde Queremos Estar?</h5>
+                  </div>
+                </div>
+              </nav>
+              <table class="hoverable bordered">
+                <tbody>
+                  <tr>
+                    <td ng-click="principiosCorporativos()">Principios Corporativos</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="misionvision('DondeQueremosEstar')">Mision y Vision</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="estrategiasDireccionamiento()">Estrategias de Direccionamiento</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <nav class="fondoDexcon">
+                <div class="nav-wrapper">
+                  <div class="left col s12 m12 l12">
+                    <h5>Creacion de Valor</h5>
+                  </div>
+                </div>
+              </nav>
+              <table class="hoverable bordered">
+                <tbody>
+                  <tr>
+                    <td ng-click="conductoresValor()">Conductores de Valor</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="palancas()">Palancas</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="estrategias()">Estrategias</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="iniciativas()">Iniciativas</td>
+                  </tr>
+                  <tr>
+                    <td ng-click="kpi()">Indicador KPI</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div> -->
+
+          <button ng-click="anterior()" class="btn fondoDexcon waves-effect waves-light left" type="submit" name="action">
+            <i class="mdi-image-navigate-before left"></i>Anterior
+          </button>
+        </div>
+      </div> 
+    </div> 
+  </div> 
+</div> 
+</section>

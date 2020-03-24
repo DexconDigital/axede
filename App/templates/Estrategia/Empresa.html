@@ -1,0 +1,67 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">La Empresa</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+              <div class="nav-wrapper">                
+                <h4 class="header2">Planeacion Estrategica</h4>
+                <div class="input-field col s12 m6">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input disabled ng-model="clickedEmpresa.Nombre" name="clickedEmpresaNombre" id="clickedEmpresaNombre" type="text" class="validate">
+                  <label for="clickedEmpresaNombre" class="active">Razon Social</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input disabled ng-model="clickedEmpresa.Nit" name="clickedEmpresaNit" id="clickedEmpresaNit" type="text" class="validate">
+                  <label for="clickedEmpresaNit" class="active">Cedula /NIT</label>
+                </div>                            
+                <div class="input-field col s12 m12" style="margin-top: 0px;padding-left: 0px">
+                  <h6 class="header2">Horizonte Estrategico</h6>
+                  <div class="input-field col s12 m4">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="planeacion.AnoInicial" name="planeacionAnoInicial" id="planeacionAnoInicial" type="number" min="2000" max="3000" class="validate">
+                    <label class="active" for="planeacionAnoInicial">Año Inicial</label>
+                  </div>
+                  <div class="input-field col s12 m4">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="planeacion.AnoFinal" name="planeacionAnoFinal" id="planeacionAnoFinal" type="number" min="2000" max="3000" class="validate">
+                    <label class="active" for="planeacionAnoFinal">Año Final</label>
+                  </div>
+                </div>
+                
+                <!-- <h4 class="header2">Los Estrategas</h4> -->
+                <div class="input-field col s12 m12">
+                  <i class="mdi-editor-mode-edit prefix"></i>
+                  <textarea ng-model="planeacion.Estrategas" name="planeacionEstrategas" id="planeacionEstrategas" type="text" class="validate materialize-textarea"></textarea>
+                  <label for="planeacionEstrategas" class="">Los Estrategas</label>
+                </div>
+                <!-- </div> -->
+
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12" style="margin-bottom: 10px;">                
+                <button ng-click="siguiente()" class="btn cyan waves-effect waves-light right" type="submit" name="action">Siguiente
+                    <i class="mdi-image-navigate-next right"></i>
+                </button>
+                <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+                  <i class="mdi-image-navigate-before left"></i>
+                </button>
+                </div> 
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

@@ -1,0 +1,182 @@
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">Matriz del Perfil Competitivo</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <div class="card-panel">
+                      <h4 class="header" style="text-align: center">Matriz del Perfil COmpetitivo</h4>
+                      <table class="centered hoverable bordered MatrizMPC">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th rowspan="2">Factores Criticos para el Exito</th>
+                            <th rowspan="2">Importancia factor en %</th>
+                            <th colspan="2">Mi Empresa</th>
+                            <th colspan="2">Competidor 1</th>
+                            <th colspan="2">Competidor 2</th>
+                            <th colspan="2">Competidor 3</th>
+                            <th colspan="2">Competidor 4</th>
+                            <!-- <th colspan="2">Competidor 5</th> -->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="width: 5%;"></td>
+                            <td style="width: 14%;"></td>
+                            <td style="width: 9%;"></td>
+                            <td style="width: 6%;">Puntos</td>
+                            <td style="width: 8%;">Valor</td>
+                            <td style="width: 6%;">Puntos</td>
+                            <td style="width: 8%;">Valor</td>
+                            <td style="width: 6%;">Puntos</td>
+                            <td style="width: 8%;">Valor</td>
+                            <td style="width: 6%;">Puntos</td>
+                            <td style="width: 8%;">Valor</td>
+                            <td style="width: 6%;">Puntos</td>
+                            <td style="width: 8%;">Valor</td>
+                            <!-- <td style="width: 5%;">Puntos</td>
+                            <td style="width: 7%;">Valor</td> -->
+                          </tr>
+                          <tr ng-repeat="factor in factores">
+                            <td>
+                              <a ng-click="borrarFactor($index)" class="btn-floating waves-effect waves-light red lighten-2"><i class="mdi-action-delete"></i></a>
+                            </td>
+                            <td style="width: 14%">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.Descripcion" name="{{'descripcion'+$index}}" id="{{'descripcion'+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                <label class="widthauto" for="{{'descripcion'+$index}}">Descripcion</label>
+                              </div>
+                            </td>
+                            <td style="width: 9%">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.Importancia" name="{{'importancia'+$index}}" id="{{'importancia'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="100" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 100">
+                                <label class="widthauto active" for="{{'importancia'+$index}}">Importancia</label>
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.PuntosE" name="{{'puntosE'+$index}}" id="{{'puntosE'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto active" for="{{'puntosE'+$index}}">Puntos</label>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="input-field col s12 m12">
+                                {{factor.PuntosE * factor.Importancia * 0.01}}
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.Puntos1C" name="{{'puntos1C'+$index}}" id="{{'puntos1C'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto active" for="{{'puntos1C'+$index}}">Puntos</label>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="input-field col s12 m12">
+                                {{factor.Puntos1C * factor.Importancia * 0.01}}
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.Puntos2C" name="{{'puntos2C'+$index}}" id="{{'puntos2C'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto active" for="{{'puntos2C'+$index}}">Puntos</label>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="input-field col s12 m12">
+                                {{factor.Puntos2C * factor.Importancia * 0.01}}
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.Puntos3C" name="{{'puntos3C'+$index}}" id="{{'puntos3C'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto active" for="{{'puntos3C'+$index}}">Puntos</label>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="input-field col s12 m12">
+                                {{factor.Puntos3C * factor.Importancia * 0.01}}
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.Puntos4C" name="{{'puntos4C'+$index}}" id="{{'puntos4C'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto active" for="{{'puntos4C'+$index}}">Puntos</label>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="input-field col s12 m12">
+                                {{factor.Puntos4C * factor.Importancia * 0.01}}
+                              </div>
+                            </td>
+
+                            <!-- <td>
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.Puntos5C" name="{{'puntos5C'+$index}}" id="{{'puntos5C'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto" for="{{'puntos5C'+$index}}">Puntos</label>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="input-field col s12 m12">
+                                <input ng-model="factor.valor5C" name="{{'Valor5C'+$index}}" id="{{'Valor5C'+$index}}" type="number" class="validate" data-rule-required="true" data-rule-min="0" data-rule-max="10" data-msg-required="Campo requerido" data-msg-min="Valor minimo es 0" data-msg-max="Valor maximo es 10">
+                                <label class="widthauto" for="{{'valor5C'+$index}}">Valor</label>
+                              </div>
+                            </td> -->
+                          </tr>
+                          <tr>
+                            <td>
+                              <a ng-click="agregarFactor()" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a>
+                            </td>
+                            <td></td>
+                            <td>{{getSumaPorcentaje()}}</td>
+                            <td></td>
+                            <td>{{getSuma("PuntosE")}}</td>
+                            <td></td>
+                            <td>{{getSuma("Puntos1C")}}</td>
+                            <td></td>
+                            <td>{{getSuma("Puntos2C")}}</td>
+                            <td></td>
+                            <td>{{getSuma("Puntos3C")}}</td>
+                            <td></td>
+                            <td>{{getSuma("Puntos4C")}}</td>
+                            <!-- <td></td> -->
+                            <!-- <td>{{getSuma()}}</td> -->
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light red accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                  </div>
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="anterior()" class="waves-effect waves-light red accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+
+</section>

@@ -1,0 +1,125 @@
+<section id="content">
+  <div id="breadcrumbs-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <ol class="breadcrumbs">
+              <li class="active">{{diagnostico.NombreDiagnostico}}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <div class="card-panel" ng-repeat="item in diagnostico.Items"">
+                      <h4 class="header" style="text-align: center;color: black">{{item.NombreItem}}</h4>
+                      <table class="centered hoverable bordered">
+                        <thead>
+                          <tr>
+                            <th colspan="2"></th>
+                            <th colspan="3">Fortaleza</th>
+                            <th colspan="3">Debilidad</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td></td>
+                            <td>Descripcion de Factores</td>
+                            <td>Nivel</td>
+                            <td>Impacto</td>
+                            <td>N*I</td>
+                            <td>Nivel</td>
+                            <td>Impacto</td>
+                            <td>N*I</td>
+                          </tr>
+                          <tr ng-repeat="descripcion in item.Descripciones">
+                            <td style="width: 5%;">
+                              <a ng-click="borrarDescripcion($index,$parent.$index)" class="btn-floating waves-effect waves-light red lighten-2"><i class="mdi-action-delete"></i></a>
+                            </td>
+                            <td style="width: 45%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="descripcion.Descripcion" name="{{'descripcion'+item.AliasItem+$index}}" id="{{'descripcion'+item.AliasItem+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                <label class="widthauto" for="{{'descripcion'+item.AliasItem+$index}}">Descripcion {{$index+1}}</label>
+                              </div>
+                            </td>
+                            <td style="width: 10%;">
+                              <div class="input-field col s12 mySelect">
+                                <select name="{{$parent.$index+'FortalezaNivel'+item.AliasItem+$index}}" ng-model="descripcion.FortalezaNivel">
+                                  <option value="" disabled selected></option>
+                                  <option value="1">Bajo</option>
+                                  <option value="2">Medio</option>
+                                  <option value="3">Alto</option>
+                                </select>
+                              </div>  
+                            </td>
+                            <td style="width: 10%;">
+                              <div class="input-field col s12 mySelect">
+                                <select name="{{$parent.$index+'FortalezaImpacto'+item.AliasItem+$index}}" ng-model="descripcion.FortalezaImpacto">
+                                  <option value="" disabled selected></option>
+                                  <option value="1">Bajo</option>
+                                  <option value="2">Medio</option>
+                                  <option value="3">Alto</option>
+                                </select>
+                              </div>  
+                            </td>
+                            <td style="width: 5%;">
+                              {{descripcion.FortalezaNivel * descripcion.FortalezaImpacto}}
+                            </td>
+                            <td style="width: 10%;">
+                              <div class="input-field col s12 mySelect">
+                                <select name="{{$parent.$index+'DebilidadNivel'+item.AliasItem+$index}}" ng-model="descripcion.DebilidadNivel">
+                                  <option value="" disabled selected></option>
+                                  <option value="1">Bajo</option>
+                                  <option value="2">Medio</option>
+                                  <option value="3">Alto</option>
+                                </select>
+                              </div>  
+                            </td>
+                            <td style="width: 10%;">
+                              <div class="input-field col s12 mySelect">
+                                <select name="{{$parent.$index+'DebilidadImpacto'+item.AliasItem+$index}}" ng-model="descripcion.DebilidadImpacto">
+                                  <option value="" disabled selected></option>
+                                  <option value="1">Bajo</option>
+                                  <option value="2">Medio</option>
+                                  <option value="3">Alto</option>
+                                </select>
+                              </div>  
+                            </td>
+                            <td style="width: 5%;">
+                              {{descripcion.DebilidadNivel * descripcion.DebilidadImpacto}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="">
+                              <a ng-click="agregarDescripcion($index)" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a>
+                            </td>
+                            <td>Calificacion</td>
+                            <td colspan="3">{{getCalificacion($index,0)}}%</td>
+                            <td colspan="3">{{getCalificacion($index,1)}}%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light fondoDexcon accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                    <button ng-click="anterior()" class="waves-effect waves-light fondoDexcon accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+
+</section>

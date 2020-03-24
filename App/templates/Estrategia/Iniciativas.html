@@ -1,0 +1,112 @@
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">Inicativas</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <div class="card-panel" ng-repeat="estrategia in estrategias"">
+                      <h4 class="header" ng-class="estrategia.Color" style="text-align: center;">{{estrategia.Estrategia}}</h4>
+                      <table class="centered hoverable bordered">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="iniciativa in estrategia.Iniciativas"">
+                            <td style="width: 20%;">
+                              <a ng-click="borrarIniciativa($index,$parent.$index)" class="btn-floating waves-effect waves-light red lighten-2"><i class="mdi-action-delete"></i></a>
+                            </td>
+                            <td style="width: 80%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="iniciativa.Iniciativa" name="{{$parent.$index+'iniciativa'+$index}}" id="{{$parent.$index+'iniciativa'+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                <label class="widthauto" for="{{$parent.$index+'iniciativa'+$index}}">Iniciativa {{$index+1}}</label>
+                              </div>
+                              <div class="input-field col s12 m12">
+                                <table class="centered hoverable bordered">
+                                  <thead>
+                                    <tr>
+                                      <th></th>
+                                      <th></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr ng-repeat="actividad in iniciativa.Actividades"">
+                                      <td style="width: 20%;">
+                                        <a ng-click="borrarActividad($parent.$parent.$index,$parent.$index,$index)" class="btn-floating waves-effect waves-light red lighten-2"><i class="mdi-action-delete"></i></a>
+                                      </td>
+                                      <td style="width: 80%;">
+                                        <div class="input-field col s12 m6">
+                                          <input ng-model="actividad.Actividad" name="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'actividad'+$index}}" id="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'actividad'+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                          <label class="widthauto" for="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'actividad'+$index}}">Actividad {{$index+1}}</label>
+                                        </div>
+                                        <div class="input-field col s12 m6">
+                                          <input ng-model="actividad.Responsable" name="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'responsable'+$index}}" id="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'responsable'+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                          <label class="widthauto" for="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'responsable'+$index}}">Responsable</label>
+                                        </div>
+                                        <div class="input-field col s12 m6">
+                                          <input ng-model="actividad.Inicio" type="text" class="datepicker" name="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'inicio'+$index}}" id="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'inicio'+$index}}">
+                                          <label class="widthauto" for="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'inicio'+$index}}">FECHA INICIO</label>
+                                        </div>
+                                        <div class="input-field col s12 m6">
+                                          <input ng-model="actividad.Final" type="text" class="datepicker" name="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'final'+$index}}" id="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'final'+$index}}">
+                                          <label class="widthauto" for="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'final'+$index}}">FECHA FINAL</label>
+                                        </div>                                
+                                        <div class="input-field col s12 m12">
+                                          <textarea ng-model="actividad.Recursos" name="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'recursos'+$index}}" id="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'recursos'+$index}}" type="text" class="validate materialize-textarea" style="margin-left:0px" required="" aria-required="true"></textarea>
+                                          <label class="widthauto" for="{{$parent.$parent.$index+'iniciativa'+$parent.$index+'recursos'+$index}}" class="">Recursos Necesarios</label>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="text-align: center;width: 20%;" ng-click="agregarActividad($parent.$index,$index,iniciativa.IdIniciativa)">
+                                        <a class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a>
+                                      </td>
+                                      <td style="text-align: center;width: 20%;" ng-click="agregarActividad($parent.$index,$index,iniciativa.IdIniciativa)">
+                                        Agregar Actividad
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;width: 20%;">
+                              <a ng-click="agregarIniciativa($index,estrategia.Id)" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light red accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                  </div>
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="anterior()" class="waves-effect waves-light red accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+
+</section>

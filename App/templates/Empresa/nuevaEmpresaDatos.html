@@ -1,0 +1,138 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li>Empresas</li>
+            <li>Nueva Empresa</li>
+            <li class="active">Paso 1</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+              <div class="nav-wrapper">                
+                <h4 class="header2">Datos Principales</h4>
+                <div class="input-field col s12 m12">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.Nombre" name="nuevaEmpresaNombre" id="nuevaEmpresaNombre" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevaEmpresaNombre">Razón Social / Nombres y Apellidos</label>
+                </div>
+                <div class="input-field col s12 m4">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.Direccion" name="nuevaEmpresaDireccion" id="nuevaEmpresaDireccion" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevaEmpresaDireccion">Direccion</label>
+                </div>
+                <div class="input-field col s12 m3">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.Nit" name="nuevaEmpresaNit" id="nuevaEmpresaNit" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevaEmpresaNit">Nit / C.C</label>
+                </div>
+                <div class="input-field col s12 m1">
+                  <input ng-model="nuevaEmpresa.NitDv" name="nuevaEmpresaNitDv" id="nuevaEmpresaNitDv" type="text">
+                  <label for="nuevaEmpresaNitDv">DV</label>
+                </div>
+                <div class="input-field col s12 m4">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.Telefono" name="nuevaEmpresaTelefono" id="nuevaEmpresaTelefono" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevaEmpresaTelefono">Telefono</label>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Contacto</h4>
+                <div class="input-field col s12 m12">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.Contacto.Nombre" name="nuevaEmpresaContactoNombre" id="nuevaEmpresaContactoNombre" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevaEmpresaContactoNombre">Nombre y Apellidos</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.Contacto.Cargo" name="nuevaEmpresaContactoCargo" id="nuevaEmpresaContactoCargo" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevaEmpresaContactoCargo">Cargo</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.Contacto.Telefono" name="nuevaEmpresaContactoTelefono" id="nuevaEmpresaContactoTelefono" type="text">
+                  <label for="nuevaEmpresaContactoTelefono">Telefono</label>
+                </div>
+                <div class="input-field col s12 m12">
+                  <div class="input-field col s12 m6">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="nuevaEmpresa.Contacto.Movil" name="nuevaEmpresaContactoMovil" id="nuevaEmpresaContactoMovil" type="number">
+                    <label for="nuevaEmpresaContactoMovil">Movil</label>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="nuevaEmpresa.Contacto.Correo" name="nuevaEmpresaContactoCorreo" id="nuevaEmpresaContactoCorreo" type="text" class="validate" required="" aria-required="true">
+                    <label for="nuevaEmpresaContactoCorreo">Correo</label>
+                  </div>
+                </div>
+
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Otros Datos</h4>
+                <div class="input-field col s12 m4">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.IdDexcon" name="nuevaEmpresaIdDexcon" id="nuevaEmpresaIdDexcon" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevaEmpresaIdDexcon">Id Cliente</label>
+                </div>
+                <div class="input-field col s12 m4">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.EmpleadosDirectos" name="nuevaEmpresaEmpleadosDirectos" id="nuevaEmpresaEmpleadosDirectos" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevaEmpresaEmpleadosDirectos">Empleados Directos</label>
+                </div>
+                <div class="input-field col s12 m4">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevaEmpresa.EmpleadosIndirectos" name="nuevaEmpresaEmpleadosIndirectos" id="nuevaEmpresaEmpleadosIndirectos" type="text" class="validate" required="" aria-required="true">
+                  <label class="labelesp" for="nuevaEmpresaEmpleadosIndirectos" style="top: -0.2rem;">Empleados Indirectos <br>(Incluyendo Contratistas)</label>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Tipo</h4>
+                <div class="input-field col s12 m12">
+                  <!-- <p> -->
+                    <input type="radio" ng-model="nuevaEmpresa.Tipo" id="nuevaEmpresaTipoPrivada" value="privada" data-error=".errorTxt" name="nuevaEmpresaTipo" required="" aria-required="true" class="valid" aria-describedby="cgender-error">
+                    <label for="nuevaEmpresaTipoPrivada">Privada</label>
+                  <!-- </p> -->
+                  <!-- <p> -->
+                    <input type="radio" ng-model="nuevaEmpresa.Tipo" id="nuevaEmpresaTipoPublica" value="publica" name="nuevaEmpresaTipo" class="valid">
+                    <label for="nuevaEmpresaTipoPublica">Publica</label>
+                  <!-- </p> -->
+                  <div>
+                    <div class="errorTxt"><div id="cgender-error" class="error" style="display: none;"></div></div>
+                  </div>
+                </div>
+                <h4 class="header2" ng-show="nuevaEmpresa.Tipo == 'privada'">¿Tiene Macroproceso de Evaluacion?</h4>
+                <div class="input-field col s12 m12" ng-show="nuevaEmpresa.Tipo == 'privada'">
+                    <input type="radio" ng-model="nuevaEmpresa.MacroprocesoEvaluacion" id="nuevaEmpresaMacroprocesoEvaluacionSi" value="1" data-error=".errorTxt2" name="nuevaEmpresaMacroprocesoEvaluacion" required="" aria-required="true" class="valid" aria-describedby="cgender2-error">
+                    <label for="nuevaEmpresaMacroprocesoEvaluacionSi">Si</label>
+                    <input type="radio" ng-model="nuevaEmpresa.MacroprocesoEvaluacion" id="nuevaEmpresaMacroprocesoEvaluacionNo" value="0" name="nuevaEmpresaMacroprocesoEvaluacion" class="valid">
+                    <label for="nuevaEmpresaMacroprocesoEvaluacionNo">No</label>
+                  <div>
+                    <div class="errorTxt2"><div id="cgender2-error" class="error" style="display: none;"></div></div>
+                  </div>
+                </div>
+                <!-- <div class="col s12" ng-show="nuevaEmpresa.Tipo == 'privada'">
+                  <input type="checkbox" ng-model="nuevaEmpresa.MacroprocesoEvaluacion" class="checkbox valid" id="nuevaEmpresaMacroprocesoEvaluacion" name="nuevaEmpresaMacroprocesoEvaluacion">
+                  <label for="nuevaEmpresaMacroprocesoEvaluacion"></label>
+                </div> -->
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12" style="margin-bottom: 10px;">
+                <button ng-click="siguiente()" class="btn cyan waves-effect waves-light right" type="submit" name="action">Crear
+                  <i class="mdi-image-navigate-next right"></i>
+                </button>
+                <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+                  <i class="mdi-image-navigate-before left"></i>
+                </button>
+                </div> 
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

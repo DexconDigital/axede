@@ -1,0 +1,51 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li>Empresas</li>
+            <li>Editar Empresa</li>
+            <li class="active">Cantidad de Procesos</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+              <div class="nav-wrapper">     
+                <div ng-repeat="cantidad in cantidadProcesos" ng-if="$index<12">
+                  <h4 class="header2" ng-if="cantidad.Alias == 'MEs'">Estrategicos</h4> 
+                  <h4 class="header2" ng-if="cantidad.Alias == 'MM'">Misionales</h4> 
+                  <h4 class="header2" ng-if="cantidad.Alias == 'MA'">Apoyo</h4> 
+                  <h4 class="header2" ng-if="cantidad.Alias == 'MEv' && cantidadProcesos[-1] == true">Evaluacion</h4> 
+
+                  <div class="input-field col s12 m4" ng-if="$index < 9 || cantidadProcesos[-1] == true">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="cantidad.Cantidad" name="{{'cantidad'+cantidad.Alias}}" id="{{'cantidad'+cantidad.Alias}}" type="text" class="validate">
+                    <label for="{{'cantidad'+cantidad.Alias}}">Cantidad de {{cantidad.Tipo}}</label>
+                  </div>
+                  <div class="divider" style="width: 100%" ng-if="($index+1) % 3 == 0"></div>
+                </div>
+
+                <button ng-click="siguiente()" class="btn cyan waves-effect waves-light right" type="submit" name="action">Siguiente
+                  <i class="mdi-image-navigate-next right"></i>
+                </button>
+                <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+                  <i class="mdi-image-navigate-before left"></i>
+                </button>
+              </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

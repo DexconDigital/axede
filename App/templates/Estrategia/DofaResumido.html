@@ -1,0 +1,74 @@
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">Dofa Resumido</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+                <div class="row">
+                  <!-- <h4 class="header2">Dofa Resumido</h4> -->
+                  <div class="col s12 m12 l12">
+                    <div class="card-panel" ng-repeat="tipo in dofaResumido">
+                      <h4 class="header" style="text-align: center">{{tipo.NombreDiagnostico}}</h4>
+                      <table class="centered hoverable bordered">
+                        <thead>
+                          <tr>
+                            <th>Item</th>
+                            <th>Fortaleza</th>
+                            <th>Debilidad</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="item in tipo.Items">
+                            <td style="width: 50%;text-align: left;">{{item.NombreItem}}</td>
+                            <td style="width: 25%;">{{item.Fortaleza}} %</td>
+                            <td style="width: 25%;">{{item.Debilidad}} %</td>
+                          </tr>
+                          <tr>
+                            <td style="width: 50%;text-align: left;">TOTAL</td>
+                            <td style="width: 25%;font-size: 15px">{{tipo.FortalezaTotal}} %</td>
+                            <td style="width: 25%;font-size: 15px">{{tipo.DebilidadTotal}} %</td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" style="width: 50%;font-weight: bold;">{{tipo.texto}}</td>
+                            <td style="width: 25%;font-size: 15px">{{tipo.Total}} %</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- <h4 class="header2">Los Estrategas</h4> -->
+                  <div class="input-field col s12 m12">
+                    <i class="mdi-editor-mode-edit prefix"></i>
+                    <textarea ng-model="dofaResumido.Resumen" name="dofaresumidoresumen" id="dofaresumidoresumen" type="text" class="validate materialize-textarea"></textarea>
+                    <label for="dofaresumidoresumen" class="">Analisis de Resultados DOFA</label>
+                  </div>
+                  <!-- </div> -->
+
+                  <div class="divider" style="width: 100%"></div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light red accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                  </div>
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="anterior()" class="waves-effect waves-light red accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+
+</section>

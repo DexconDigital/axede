@@ -1,0 +1,83 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li>Empresas</li>
+            <li>Editar Empresa</li>
+            <li class="active">Procesos</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+              <!-- <div class="nav-wrapper">      -->
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <div class="card-panel" ng-repeat="cantidad in cantidadProcesos" ng-if="cantidad.Alias == 'PEs' || cantidad.Alias == 'PM' || cantidad.Alias == 'PA' || (cantidad.Alias == 'PEv' && cantidadProcesos[-1] == true)">
+                      <h4 class="header" style="text-align: center">{{getNombre(cantidad.Alias)}}</h4>
+                      <table class="hoverable bordered">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center;">Opcion</th>
+                            <th style="text-align: center;">Nombre</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="proceso in cantidad.Procesos">
+                            <td style="text-align: center;width: 20%;">
+                              <a ng-click="borrarProceso($index,$parent.$index)" class="btn-floating waves-effect waves-light red lighten-2"><i class="mdi-action-delete"></i></a>
+                            </td>
+                            <td style="text-align: center;width: 40%;">
+                              <div class="input-field col s12 m12">
+                                <input ng-model="proceso.Nombre" name="{{'proceso'+cantidad.Alias+$index}}" id="{{'proceso'+cantidad.Alias+$index}}" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido">
+                                <label class="widthauto" for="{{'proceso'+cantidad.Alias+$index}}">Nombre del {{cantidad.Tipo}} {{$index+1}}</label>
+                              </div>
+                            </td>
+                            <td style="text-align: center;width: 40%;">
+                              <div class="input-field col s12 m12 selectProcesos">
+                                <select name="{{$index+'select'+$parent.$index}}" ng-model="proceso.IdPadre">
+                                  <option value="" disabled selected>Seleccione el Macroproceso</option>
+                                  <option value="0" selected>No tiene</option>
+                                  <option ng-repeat="posible in cantidad.Posibles" value="{{posible.Id}}">{{posible.Nombre}}</option>
+                                </select>
+                                <label for="{{$index+'select'+$parent.$index}}" class="widthauto active">Proceso Padre</label>
+                              </div> 
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;width: 20%;">
+                              <a ng-click="agregarProceso($index)" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light red accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                  </div>
+                  <div class="col s12 m6 l6 right">
+                    <button ng-click="anterior()" class="waves-effect waves-light red accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+              <!-- </div> -->
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

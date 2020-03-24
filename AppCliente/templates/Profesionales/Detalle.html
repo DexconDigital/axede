@@ -1,0 +1,78 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li>Detalle Profesional</li>
+            <li class="active">{{nuevoProfesional.Nombre}}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <div class="col offset-s2 s8">
+            <div class="nav-wrapper collection z-depth-1">                
+              <h4 class="header2" style="text-align: center">Datos Principales</h4>
+              <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                <div class="col s6 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Nombres</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoProfesional.Nombre}}</div>
+                </div>   
+                <div class="col s6 grey-text darken-1">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Rut</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoProfesional.Rut}}</div>
+                </div>           
+              </div>
+              <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                <div class="col s6 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Cedula</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoProfesional.Cedula}}</div>
+                </div>
+                <div class="col s6 grey-text darken-1">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Direccion</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoProfesional.Direccion}}</div>
+                </div>                
+              </div>
+              <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                <div class="col s6 grey-text darken-1">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Telefono</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoProfesional.Telefono}}</div>
+                </div>
+                <div class="col s6 grey-text darken-1">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Movil</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoProfesional.Movil}}</div>
+                </div>
+                <div class="col s6 grey-text darken-1">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Correo</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoProfesional.Correo}}</div>
+                </div>
+                <div class="col s6 grey-text darken-1">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Profesion</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{nuevoProfesional.Profesion}}</div>
+                </div>
+              </div>
+              <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                <div class="col s12 grey-text darken-1">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Especialidades</div>
+                  <div class="col s12 grey-text text-darken-4 left-align" ng-bind-html="toHtml(nuevoProfesional.Especialidades)"></div>
+                </div>
+              </div>
+            </div>
+            <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+              <i class="mdi-image-navigate-before left"></i>
+            </button>
+            <button ng-click="editar(nuevoProfesional)" class="btn cyan waves-effect waves-light right" type="submit" name="action">Editar
+              <i class="mdi-image-navigate-before left"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

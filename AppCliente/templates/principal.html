@@ -1,0 +1,112 @@
+<section id="content">
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <ol class="breadcrumbs">
+                    <li>Principal</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+	<div class="container">
+
+        <!--card widgets start-->
+        <div ng-if="role == 'Usuario'">
+            <div id="card-widgets">
+                <div class="row">
+
+                    <div class="col s12 m6 l4">
+                        <div class="card">
+                            <div class="card-move-up migris">
+                                <div class="move-up">
+                                    <p class="margin black-text">Riesgos</p>
+                                    <div id="riesgos"></div>
+                                    <a style="float: none;" ui-sref="app.cliente.resumen" class="btn waves-effect waves-light col s4 fondoDexcon darken-1">Revisar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <ul id="task-card" class="collection with-header">
+                            <li class="collection-header cyan">
+                                <h4 class="task-card-title">Mis Pendientes</h4>
+                                <p class="task-card-date">{{today}}</p>
+                            </li>
+                            <li class="collection-item dismissable" ng-repeat="pendiente in pendientes">
+                                <p style="margin: 0"></i> {{pendiente.Actividad}}<a class="secondary-content"><span class="ultra-small">Today</span></a></p>
+                                <span class="task-cat teal" style="margin-left: 0px">{{pendiente.Iniciativa}}</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <div id="flight-card" class="card">
+                            <div class="card-header amber darken-2">
+                                <div class="card-title">
+                                    <h4 class="flight-card-title">Riesgo Critico en Seguridad y Salud en el Trabajo</h4>
+                                </div>
+                            </div>
+                            <div class="card-content-bg white-text" ng-style="myStyle">
+                                <div class="card-content">
+                                    <div class="row flight-state-wrapper">
+                                        <div class="col s5 m5 l5 center-align">
+                                            <div class="flight-state">
+                                                <h4 class="margin">{{mayorRiesgo.Peligro}}</h4>
+                                                <!-- <p class="ultra-small">London</p> -->
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col s2 m2 l2 center-align">
+                                            <i class="mdi-device-airplanemode-on flight-icon"></i>
+                                        </div>
+                                        <div class="col s5 m5 l5 center-align">
+                                            <div class="flight-state">
+                                                <h4 class="margin">SFO</h4>
+                                                <p class="ultra-small">San Francisco</p>
+                                            </div>
+                                        </div> -->
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <div id="profile-card" class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="images/user-bg.png" alt="user background">
+                            </div>
+                            <div class="card-content">
+                                <img src="images/avatar.jpg" alt="" class="circle responsive-img activator card-profile-image">
+                                <span class="card-title activator grey-text text-darken-4">Nestor De Arco</span>
+                                <p><i class="mdi-action-perm-identity letraDexcon text-darken-2"></i> Consultor</p>
+                                <p><i class="mdi-action-perm-phone-msg letraDexcon text-darken-2"></i> 320 3341956</p>
+                                <p><i class="mdi-communication-email letraDexcon text-darken-2"></i> nestor1980@gmail.com</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--card widgets end-->
+        <div ng-if="role == 'Administrador'">
+            <div class="section">
+                <div class="row">
+                    <div id="table-datatables" class="col m10 l8">
+                        <h4 class="header">Bienvenido</h4>
+                    </div> 
+                </div> 
+            </div>
+            <div id="card-stats">
+                <div class="row">
+                    
+                </div>
+            </div>
+        </div>
+	</div>
+</section>
+  <!-- END CONTENT -->

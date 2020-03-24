@@ -1,0 +1,39 @@
+<div id="login-page" class="row">
+  <div class="col s12">
+    <div class="row" style="margin-bottom: 20%;">
+        <div class="input-field col s12 center">
+          <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+          <!-- <p class="center login-form-text">Material Design Admin Template</p> -->
+        </div>
+    </div>
+    <form class="login-form">
+      <div class="row margin">
+        <div class="input-field col s12">
+          <i class="mdi-social-person-outline prefix"></i>
+          <input ng-model="formLogin.User" name="User" id="username" type="text" class="validate" data-rule-required="true" data-msg-required="Campo requerido" autocomplete="false">
+          <label for="username" class="">Username</label>
+        </div>
+      </div>
+      <div class="row margin">
+        <div class="input-field col s12">
+          <i class="mdi-action-lock-outline prefix"></i>
+          <input ng-model="formLogin.Pass" name="Pass" id="password" type="password" class="validate" data-rule-required="true" data-msg-required="Campo requerido" autocomplete="false">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <a ng-click="login()" class="btn waves-effect waves-light col s12 light-green darken-1">Login</a>
+        </div>
+      </div>
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="input-field col s6 m6 l6">
+          <p class="margin medium-small"><a ui-sref="inicio.registrar" style="color: white">Registrese</a></p>
+        </div>
+        <div class="input-field col s6 m6 l6">
+            <p class="margin right-align medium-small"><a ui-sref="inicio.recuperar" style="color: white">Olvide mi Contraseña</a></p>
+        </div>          
+      </div>
+    </form>
+  </div>
+</div>

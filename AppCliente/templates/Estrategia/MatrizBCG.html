@@ -1,0 +1,117 @@
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">Fuerzas de Porter</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+                <div class="row">
+                  <!-- <h4 class="header2">Dofa Resumido</h4> -->
+                  <div class="col s12 m12 l12">
+                    <div class="card-panel">
+                      <h4 class="header black-text" style="text-align: center">MATRIZ Boston Consulting Group</h4>
+                      <table class="centered hoverable bordered">
+                        <thead>
+                          <tr>
+                            <th>Descripcion</th>
+                            <!-- <th>LAS CINCO FUERZAS DE MICHAEL PORTER</th> -->
+                            <th>Diagnostico</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="width: 30%;">
+                              <ol style="text-align: left">
+                                <li>Alta participación en el mercado</li>
+                                <li>Mercados creciendo rápidamente</li>
+                                <li>Se necesita mucho efectivo para financiar el crecimiento</li>
+                                <li>Utilidades significativas</li>
+                              </ol>
+                            </td>
+                            <td style="width: 70%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="matrizbcg.Estrellas" name="estrellas" id="estrellas" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="estrellas" class="">Estrellas</label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: 30%;">
+                              <ol style="text-align: left">
+                                <li>Baja participación en el mercado
+                                <li>Mercados creciendo rápidamente</li>
+                                <li>Se necesita mucho efectivo para financiar el crecimiento</li>
+                                <li>Debe evaluar seguir invirtiendo en el negocio</li>
+                              </ol>
+                            </td>
+                            <td style="width: 90%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="matrizbcg.Interrogantes" name="interrogantes" id="interrogantes" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="interrogantes" class="">Interrogantes</label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: 30%;">
+                              <ol style="text-align: left">
+                                <li>Alta participación en el mercado</li>
+                                <li>Mercados de crecimiento lento</li>
+                                <li>Generan más efectivo del que necesitan  para su crecimiento</li>
+                                <li>Pueden usarse para desarrollar otros negocios</li>
+                                <li>Utilidades significativas</li>
+                              </ol>
+                            </td>
+                            <td style="width: 90%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="matrizbcg.Vaca" name="vaca" id="vaca" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="vaca" class="">Vaca Lechera</label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: 30%;">
+                              <ol style="text-align: left">
+                                <li>Baja participación en el mercado</li>
+                                <li>Mercados de crecimiento lento</li>
+                                <li>Pueden generar pocas utilidades o pérdidas</li>
+                                <li>Deben reestructurarse o eliminarse estos negocios</li>
+                              </ol>
+                            </td>
+                            <td style="width: 90%;">
+                              <div class="input-field myTextArea col s12 m12">
+                                <textarea ng-model="matrizbcg.Perro" name="perro" id="perro" type="text" class="validate materialize-textarea"></textarea>
+                                <label for="perro" class="">Perro</label>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="divider" style="width: 100%"></div>
+                </div>
+
+                <div style="padding-top: 20px;" class="row">
+                  <div class="col s6 m6 l6 right">
+                    <button ng-click="siguiente()" class="waves-effect waves-light fondoDexcon accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+                  </div>
+                  <div class="col s6 m6 l6 right">
+                    <button ng-click="anterior()" class="waves-effect waves-light fondoDexcon accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+                  </div>
+                </div>
+          </form>
+        </div>
+    </div>
+    <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+    </div>
+</div>
+
+</section>

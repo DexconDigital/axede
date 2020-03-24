@@ -1,0 +1,58 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li>Resumen Riesgo - Peligro</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <div class="col offset-m2 s12 m8">
+            <div class="nav-wrapper collection z-depth-1">                
+              <h4 class="header2" style="text-align: center">Datos Principales</h4>
+              <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Actividad</div>
+                <div class="col s12 grey-text text-darken-4 left-align">{{peligroDetalle.Actividad}}</div>
+              </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Control Administrativo</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{peligroDetalle.Administrativo}}</div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Consecuencia</div>
+                  <div class="col s12 grey-text text-darken-4 left-align" ng-repeat='Consecuencia in peligroDetalle.Consecuencias'>{{Consecuencia}}</div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-image-timer-auto"></i> Procesos</div>
+                  <div class="col s12 grey-text text-darken-4 left-align" ng-repeat='Proceso in peligroDetalle.Procesos'>{{Proceso}}</div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Descripcion</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{peligroDetalle.Descripcion}}</div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Foto</div>
+                  <div ng-if="peligroDetalle.Foto != null" class="col s12 grey-text text-darken-4 left-align"><img src="http://dexcon.aplicando.com.co/php/images/{{peligroDetalle.Foto}}" alt="imagen" style="width: 50%"> </div>
+                </div>
+                <div class="col s12 grey-text darken-1" style="margin-bottom: 10px;">
+                  <div class="col s12 grey-text darken-1"><i class="mdi-action-accessibility"></i> Rutinario</div>
+                  <div class="col s12 grey-text text-darken-4 left-align">{{peligroDetalle.Rutinario}}</div>
+                </div>
+            </div>
+            <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+              <i class="mdi-image-navigate-before left"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

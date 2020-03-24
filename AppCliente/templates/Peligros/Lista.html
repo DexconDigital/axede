@@ -1,0 +1,76 @@
+<section id="content">
+        
+<!--breadcrumbs start-->
+<div id="breadcrumbs-wrapper">
+    <!-- Search for small screen -->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">Lista de Peligros</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--breadcrumbs end-->
+
+
+<!--start container-->
+<div class="container">
+  <div class="section">
+    <!--DataTables example-->
+    <div class="row">
+      <div id="table-datatables" class="col m12 l12">
+        <div class="row">
+          <div class="col s12 m12 l12">
+          <a ng-click="nuevaPeligro()" class="waves-effect waves-light green lighten-2 btn right"><i class="mdi-social-group-add right"></i>Nuevo Peligro</a>              
+          </div>
+          <div class="col s12 m6 l6">
+            <p>Seleccione un Peligro</p>
+          </div>
+          
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <!-- <table id="tableCurso" datatable="ng" class="responsive-table display" cellspacing="0"> -->
+              <!-- <table class="hoverable bordered">
+                <thead>
+                  <tr>
+                    <th>Peligros</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="peligro in peligros">
+                    <td ng-click="detallesPeligro(peligro)">{{peligro.Descripcion}}</td>
+                    <td style="text-align: center;width: 10%;">
+                      <a ng-click="editarPeligro(peligro)" class="btn-floating waves-effect waves-light yellow"><i class="mdi-editor-mode-edit"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table> -->
+              <table class="hoverable bordered">
+                <thead>
+                  <tr>
+                    <th style="text-align: center;">Descripcion</th>
+                    <th style="text-align: center;">Clasificacion</th>
+                    <th style="text-align: center;">Consecuencia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="peligro in peligros">
+                    <td style="text-align: center;" ng-click="detallesPeligro(peligro)">{{peligro.Descripcion}}</td>
+                    <td style="text-align: center;" ng-click="detallesPeligro(peligro)">{{peligro.Clasificacion}}</td>
+                    <td style="text-align: center;" ng-click="detallesPeligro(peligro)">{{consecuencias[nuevoPeligro.Consecuencia]}}</td>
+                    <td style="text-align: center;width: 10%;">
+                      <a ng-click="editarPeligro(peligro)" class="btn-floating waves-effect waves-light yellow"><i class="mdi-editor-mode-edit"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+<!--end container-->
+</section>

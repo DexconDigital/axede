@@ -1,0 +1,91 @@
+<section id="content">
+	<!--breadcrumbs start-->
+	<div id="breadcrumbs-wrapper">
+	    <div class="container">
+	    	<div class="row">
+	    		<div class="col s12 m12 l12">
+	    			<!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+	    			<ol class="breadcrumbs">
+	    				<li>Proyectos</li>
+	    				<li>Lista de {{clickedNorma.Nombre}}</li>
+	    				<li>{{clickedEmpresa.Nombre}}</li>
+	    				<li class="active">Peligros</li>
+	    			</ol>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	<!--breadcrumbs end-->
+	<!--start container-->
+	<div class="container">
+		<div class="section">
+			<!--DataTables example-->
+			<div class="row">
+				<div id="table-datatables" class="col m10 offset-m1 l10 offset-l1">
+					<h4 class="header">{{clickedEmpresa.Nombre}} | Identificacion y valoracion de peligros</h4>
+					<div class="row">
+						<div class="col s12 m12 l12">
+							<div class="card-panel" ng-repeat="peligrosEtapa in peligrosEtapas">
+								<h4 class="header" style="text-align: center">{{ peligrosEtapa.Proceso }}</h4>
+								<table class="hoverable bordered">
+									<thead>
+										<tr>
+											<th style="text-align: center;"></th>
+											<th style="text-align: center;">Actvidad</th>
+											<th style="text-align: center;">Peligro</th>
+											<th style="text-align: center;">Deficiencia</th>
+											<th style="text-align: center;">Exposicion</th>
+											<th style="text-align: center;">Expuestos</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="peligro in peligrosEtapa.Peligros" ng-if="peligro.Peligro != null">
+											<td style="text-align: center;width: 10%;">
+												<a ng-click="editarPeligro($index,peligrosEtapa.IdEtapa)" class="btn-floating waves-effect waves-light yellow lighten-2"><i class="mdi-editor-mode-edit"></i></a>
+												<a ng-click="borrarPeligro($index,peligrosEtapa.IdEtapa)" class="btn-floating waves-effect waves-light red lighten-2"><i class="mdi-action-delete"></i></a>
+											</td>
+											<td style="text-align: center;width: 25%;" ng-click="detallePeligro($index,peligrosEtapa.IdEtapa)">{{peligro.Actividad}}</td>
+											<td style="text-align: center;width: 25%;" ng-click="detallePeligro($index,peligrosEtapa.IdEtapa)">{{peligro.Peligro}}</td>
+											<td style="text-align: center;width: 10%;">
+												<!-- <a ng-click="cambiarDato($parent.$index,$index,'mas','deficiencia')" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a> -->
+												<p>{{peligro.Deficiencia}}</p>
+												<!-- <a ng-click="cambiarDato($parent.$index,$index,'menos','deficiencia')" class="btn-floating waves-effect waves-light red lighten-1"><i class="mdi-content-remove-circle-outline"></i></a> -->
+											</td>
+											<td style="text-align: center;width: 20%;">
+												<!-- <a ng-click="cambiarDato($parent.$index,$index,'menos','exposicion')" style="margin-right: 5px;" class="btn-floating waves-effect waves-light red lighten-1"><i class="mdi-content-remove-circle-outline"></i></a> -->
+												{{peligro.Exposicion}}
+												<!-- <a ng-click="cambiarDato($parent.$index,$index,'mas','exposicion')" style="margin-left: 5px;" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a> -->
+											</td>
+											<td style="text-align: center;width: 10%;">
+												<!-- <a ng-click="cambiarDato($parent.$index,$index,'menos','exposicion')" style="margin-right: 5px;" class="btn-floating waves-effect waves-light red lighten-1"><i class="mdi-content-remove-circle-outline"></i></a> -->
+												{{peligro.NoExpuestos}}
+												<!-- <a ng-click="cambiarDato($parent.$index,$index,'mas','exposicion')" style="margin-left: 5px;" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a> -->
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;width: 10%;">
+												<a ng-click="agregarPeligro(peligrosEtapa.IdEtapa)" class="btn-floating waves-effect waves-light green lighten-2"><i class="mdi-content-add-circle-outline"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div style="padding-top: 20px;" class="row">
+			          <div class="col s12 m6 l6 right">
+			            <button ng-click="siguiente()" class="waves-effect waves-light red accent-2 btn right"><i class="mdi-image-navigate-next right"></i>Siguiente</button>              
+			          </div>
+			          <div class="col s12 m6 l6 right">
+			            <button ng-click="anterior()" class="waves-effect waves-light red accent-2 btn left"><i class="mdi-image-navigate-before left"></i>Anterior</button>              
+			          </div>
+			        </div>
+			        <div id="modalinfo" ng-include="getTemplateModal()" class="modal">
+              
+			        </div>
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+	<!--end container-->
+</section>

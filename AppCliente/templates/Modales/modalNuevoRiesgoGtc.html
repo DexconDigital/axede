@@ -1,0 +1,196 @@
+<div style="padding-bottom: 0px" class="modal-content">
+  <div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card-panel">
+        <h4 class="header2">{{contentModal}} Actividad-Riesgo</h4>
+        <div class="divider" style="width: 100%"></div>
+        <div style="" class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+              <div class="nav-wrapper">                
+                <div class="input-field col s12 m12">
+                  <i class="mdi-editor-mode-edit prefix"></i>
+                  <textarea ng-model="nuevaActividad.Actividad" name="nuevaActividadActividad" id="nuevaActividadActividad" type="text" class="validate materialize-textarea" required="" aria-required="true"></textarea>
+                  <label for="nuevaActividadActividad" class="">Actividad</label>
+                </div>
+
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2" style="margin-top: 10px;">Rutinario</h4>
+                <div class="input-field col s12 m12">
+                  <!-- <p> -->
+                    <input type="radio" ng-model="nuevaActividad.Rutinario" id="nuevaActividadRutinarioSi" value="si" data-error=".errorTxtRutinario" name="nuevaActividadRutinario" required="" aria-required="true" class="valid" aria-describedby="cgender-errorRutinario">
+                    <label for="nuevaActividadRutinarioSi" class="active">Si</label>
+                  <!-- </p> -->
+                  <!-- <p> -->
+                  <br>
+                    <input type="radio" ng-model="nuevaActividad.Rutinario" id="nuevaActividadRutinarioNo" value="no" name="nuevaActividadRutinario" class="valid">
+                    <label for="nuevaActividadRutinarioNo"  class="active">No</label>
+                  <!-- </p> -->
+                  <div>
+                    <div class="errorTxtRutinario"><div id="cgender-errorRutinario" class="error" style="display: none;"></div></div>
+                  </div>
+                </div>
+
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2" style="margin-top: 10px;">Peligro</h4>
+                <div class="input-field col s12">
+                  <i class="mdi-action-home prefix"></i>
+                  <select name="selectListaPeligros" ng-model="nuevaActividad.IdPeligro">
+                    <option value="" disabled selected>Seleccione el Peligro</option>
+                    <option ng-repeat="peligro in peligros" value="{{peligro.Id}}">{{peligro.Descripcion}}</option>
+                  </select>
+                  <button style="margin-bottom: 10px;" class="btn cyan waves-effect waves-light left" ng-click="crearNuevoPeligro()" name="action">Agregar Peligro
+                    <i class="mdi-content-send right"></i>
+                  </button>
+                </div>  
+
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2" style="margin-top: 10px;">Controles Existentes</h4>
+                <div class="input-field col s12 m4">
+                  <h5 class="header2" style="margin-top: 10px;">Fuente</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaActividad.Fuente" id="nuevaActividadFuenteSi" value="si" data-error=".errorTxtFuente" name="nuevaActividadFuente" required="" aria-required="true" class="valid" aria-describedby="cgender-errorFuente">
+                    <label for="nuevaActividadFuenteSi" class="active">Si</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Fuente" id="nuevaActividadFuenteNo" value="no" name="nuevaActividadFuente" class="valid">
+                    <label for="nuevaActividadFuenteNo"  class="active">No</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Fuente" id="nuevaActividadFuenteNA" value="na" name="nuevaActividadFuente" class="valid">
+                    <label for="nuevaActividadFuenteNA"  class="active">N/A</label>
+                    <br>
+                    <div class="input-field col s12 m12" ng-show = "nuevaActividad.Fuente == 'si'">
+                      <input ng-model="nuevaActividad.NombreFuente" name="nuevaActividadNombreFuente" id="nuevaActividadNombreFuente" type="text">
+                      <label for="nuevaActividadNombreFuente">Fuente</label>
+                    </div>
+                    <div>
+                      <div class="errorTxtFuente"><div id="cgender-errorFuente" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-field col s12 m4">
+                  <h5 class="header2" style="margin-top: 10px;">Medio</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaActividad.Medio" id="nuevaActividadMedioSi" value="si" data-error=".errorTxtMedio" name="nuevaActividadMedio" required="" aria-required="true" class="valid" aria-describedby="cgender-errorMedio">
+                    <label for="nuevaActividadMedioSi" class="active">Si</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Medio" id="nuevaActividadMedioNo" value="no" name="nuevaActividadMedio" class="valid">
+                    <label for="nuevaActividadMedioNo"  class="active">No</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Medio" id="nuevaActividadMedioNA" value="na" name="nuevaActividadMedio" class="valid">
+                    <label for="nuevaActividadMedioNA"  class="active">N/A</label>
+                    <br>
+                    <div class="input-field col s12 m12" ng-show = "nuevaActividad.Medio == 'si'">
+                      <input ng-model="nuevaActividad.NombreMedio" name="nuevaActividadNombreMedio" id="nuevaActividadNombreMedio" type="text">
+                      <label for="nuevaActividadNombreMedio">Medio</label>
+                    </div>
+                    <div>
+                      <div class="errorTxtMedio"><div id="cgender-errorMedio" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-field col s12 m4">
+                  <h5 class="header2" style="margin-top: 10px;">Individuo</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaActividad.Individuo" id="nuevaActividadIndividuoSi" value="si" data-error=".errorTxtIndividuo" name="nuevaActividadIndividuo" required="" aria-required="true" class="valid" aria-describedby="cgender-errorIndividuo">
+                    <label for="nuevaActividadIndividuoSi" class="active">Si</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Individuo" id="nuevaActividadIndividuoNo" value="no" name="nuevaActividadIndividuo" class="valid">
+                    <label for="nuevaActividadIndividuoNo"  class="active">No</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Individuo" id="nuevaActividadIndividuoNA" value="na" name="nuevaActividadIndividuo" class="valid">
+                    <label for="nuevaActividadIndividuoNA"  class="active">N/A</label>
+                    <br>
+                    <div class="input-field col s12 m12" ng-show = "nuevaActividad.Individuo == 'si'">
+                      <input ng-model="nuevaActividad.NombreIndividuo" name="nuevaActividadNombreIndividuo" id="nuevaActividadNombreIndividuo" type="text">
+                      <label for="nuevaActividadNombreIndividuo">Individuo</label>
+                    </div>
+                    <div>
+                      <div class="errorTxtIndividuo"><div id="cgender-errorIndividuo" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2" style="margin-top: 10px;">Evaluacion</h4>
+                <div class="input-field col s12 m6">
+                  <h5 class="header2" style="margin-top: 10px;">N&ordm; Deficiencia</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaActividad.Deficiencia" id="nuevaActividadDeficienciaMA" value="Muy Alto" data-error=".errorTxtDeficiencia" name="nuevaActividadDeficiencia" required="" aria-required="true" class="valid" aria-describedby="cgender-errorDeficiencia">
+                    <label for="nuevaActividadDeficienciaMA" class="active">Muy Alto</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Deficiencia" id="nuevaActividadDeficienciaA" value="Alto" name="nuevaActividadDeficiencia" class="valid">
+                    <label for="nuevaActividadDeficienciaA"  class="active">Alto</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Deficiencia" id="nuevaActividadDeficienciaM" value="Medio" name="nuevaActividadDeficiencia" class="valid">
+                    <label for="nuevaActividadDeficienciaM"  class="active">Medio</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Deficiencia" id="nuevaActividadDeficienciaB" value="Bajo" name="nuevaActividadDeficiencia" class="valid">
+                    <label for="nuevaActividadDeficienciaB"  class="active">Bajo</label>
+                    <div>
+                      <div class="errorTxtDeficiencia"><div id="cgender-errorDeficiencia" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-field col s12 m6">
+                  <h5 class="header2" style="margin-top: 10px;">N&ordm; Exposicion</h5>
+                  <div class="input-field col s12 m12">
+                    <input type="radio" ng-model="nuevaActividad.Exposicion" id="nuevaActividadExposicionC" value="Continua" data-error=".errorTxtExposicion" name="nuevaActividadExposicion" required="" aria-required="true" class="valid" aria-describedby="cgender-errorExposicion">
+                    <label for="nuevaActividadExposicionC" class="active">Continua</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Exposicion" id="nuevaActividadExposicionF" value="Frecuente" name="nuevaActividadExposicion" class="valid">
+                    <label for="nuevaActividadExposicionF"  class="active">Frecuente</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Exposicion" id="nuevaActividadExposicionO" value="Ocasional" name="nuevaActividadExposicion" class="valid">
+                    <label for="nuevaActividadExposicionO"  class="active">Ocasional</label>
+                    <br>
+                    <input type="radio" ng-model="nuevaActividad.Exposicion" id="nuevaActividadExposicionE" value="Esporadica" name="nuevaActividadExposicion" class="valid">
+                    <label for="nuevaActividadExposicionE"  class="active">Esporadica</label>
+                    <div>
+                      <div class="errorTxtExposicion"><div id="cgender-errorExposicion" class="error" style="display: none;"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12 m6">
+                  <h5 class="header2" style="margin-top: 10px;">N&ordm; De Expuestos</h5>
+                  <div class="input-field col s12 m12">
+                    <input ng-model="nuevaActividad.NoExpuestos" name="nuevaActividadNoExpuestos" id="nuevaActividadNoExpuestos" type="text">
+                    <label for="nuevaActividadNoExpuestos" class="active">Expuestos</label>
+                  </div>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <div class="col s12">
+                  <h5 class="header2" style="margin-top: 10px;">Foto</h5>
+                  <div ng-if="nuevaActividad.Foto != null" class="col s12 grey-text text-darken-4 left-align"><img src="../php/images/{{nuevaActividad.Foto}}" alt="imagen" style="width: 50%"> </div>
+                  <div class="col s12">
+                    <div class="file-field input-field">
+                      <div class="btn">
+                        <span>File</span>
+                        <input name="fileToUpload" type="file" ng-model-instant id="fileToUpload" onchange="angular.element(this).scope().setFiles(this,0)">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate valid" type="text" id="miArchivo">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12" style="margin-bottom: 10px;">
+                  <button id="crear" class="btn cyan waves-effect waves-light right" ng-click="finModal(contentModal)" name="action">{{contentModal}}
+                    <i class="mdi-content-send right"></i>
+                  </button>
+                  <!-- <button ng-show="contentModal == 'Nuevo'" style="margin-right: 10px;" class="btn cyan waves-effect waves-light right" ng-click="otroProcesoModal()" name="action">Agregar Otro
+                    <i class="mdi-content-send right"></i>
+                  </button> -->
+                  <button class="btn cyan waves-effect waves-light left" ng-click="cancelarModal()">Cancelar
+                    <i class="mdi-content-send left"></i>
+                  </button>
+                </div> 
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<section id="content">
+        
+<!--breadcrumbs start-->
+<div id="breadcrumbs-wrapper">
+    <!-- Search for small screen -->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <ol class="breadcrumbs">
+            <li class="active">Lista de Profesionales</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--breadcrumbs end-->
+
+
+<!--start container-->
+<div class="container">
+  <div class="section">
+    <!--DataTables example-->
+    <div class="row">
+      <div id="table-datatables" class="col m10 offset-m1 l8 offset-l2">
+        <div class="row">
+          <div class="col s12 m12 l12">
+          <a ng-click="nuevaProfesional()" class="waves-effect waves-light green lighten-2 btn right"><i class="mdi-social-group-add right"></i>Nuevo Profesional</a>              
+          </div>
+          <div class="col s12 m6 l6">
+            <p>Seleccione un Profesional</p>
+          </div>
+          
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <!-- <table id="tableCurso" datatable="ng" class="responsive-table display" cellspacing="0"> -->
+              <table class="hoverable bordered">
+                <thead>
+                  <tr>
+                    <th>Profesionales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="profesional in profesionales">
+                    <td ng-click="detallesProfesional(profesional)">{{profesional.Nombre}}</td>
+                    <td style="text-align: center;width: 10%;">
+                      <a ng-click="editarProfesional(profesional)" class="btn-floating waves-effect waves-light yellow"><i class="mdi-editor-mode-edit"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+<!--end container-->
+</section>

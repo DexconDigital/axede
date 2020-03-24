@@ -1,0 +1,139 @@
+<section id="content">
+    <!--start container-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <!-- <h5 class="breadcrumbs-title">Jornada Tarde</h5> -->
+        <ol class="breadcrumbs">
+            <li class="active">Nuevo Peligro</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+          <form class="col s12 formValidate" novalidate id="formValidate">
+              <div class="nav-wrapper">                
+                <h4 class="header2">Datos Principales</h4>
+                <div class="input-field col s12 m12">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevoPeligro.Descripcion" name="nuevoPeligroDescripcion" id="nuevoPeligroDescripcion" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevoPeligroDescripcion">Descripcion</label>
+                </div>
+                <div class="input-field col s12 m12">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevoPeligro.Clasificacion" name="nuevoPeligroClasificacion" id="nuevoPeligroClasificacion" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevoPeligroClasificacion">Clasificacion</label>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Efectos</h4>
+                <div class="input-field col s12 m12" style="margin-top: 0px">
+                  <div class="input-field col s12 m4">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="nuevoPeligro.CantidadEfectos" name="nuevoPeligroCantidadEfectos" id="nuevoPeligroCantidadEfectos" type="number" min="1" max="10" class="validate" required="" aria-required="true">
+                    <label class="active" for="nuevoPeligroCantidadEfectos">Cantidad de Efectos</label>
+                  </div>
+                  <div class="input-field col s12 m12" ng-repeat="efectos in nuevoPeligro.Efectos track by $index">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="nuevoPeligro.Efectos[$index]" name="{{'nuevoPeligroEfectos'+$index}}" id="{{'nuevoPeligroEfectos'+$index}}" type="text" class="validate" required="" aria-required="true">
+                    <label class="active" for="{{'nuevoPeligroEfectos'+$index}}">Efecto {{$index+1}}</label>
+                  </div>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Consecuencia</h4>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nivel de Consecuencias</th>
+                      <th>NC</th>
+                      <th>Significado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mortal o Catastrófico</td>
+                      <td>100</td>
+                      <td>Muerte (s)</td>
+                    </tr>
+                    <tr>
+                      <td>Muy grave</td>
+                      <td>60</td>
+                      <td>Lesiones o enfermedades graves irreparables (Incapacidad permanente parcial o invalidez)</td>
+                    </tr>
+                    <tr>
+                      <td>Grave</td>
+                      <td>25</td>
+                      <td>Lesiones o enfermedades con incapacidad laboral temporal (ILT)</td>
+                    </tr>
+                    <tr>
+                      <td>Leve</td>
+                      <td>10</td>
+                      <td>Lesiones o enfermedades que no requieren incapacidad</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="input-field col s12">
+                  <i class="mdi-action-home prefix"></i>
+                  <select name="selectListaConsecuencia" ng-model="nuevoPeligro.Consecuencia">
+                    <option value="0">Mortal o Catastrófico</option>
+                    <option value="1">Muy grave</option>
+                    <option value="2">Grave</option>
+                    <option value="3">Leve</option>
+                  </select>
+                  <!-- <label>Empresa</label> -->
+                </div>  
+                <div class="divider" style="width: 100%"></div>
+                <!-- <h4 class="header2">Criterios</h4>
+                <div class="input-field col s12 m12">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input ng-model="nuevoPeligro.PeorConsecuencia" name="nuevoPeligroConsecuencia" id="nuevoPeligroConsecuencia" type="text" class="validate" required="" aria-required="true">
+                  <label for="nuevoPeligroConsecuencia">Peor Consecuencia</label>
+                </div> -->
+                <h4 class="header2">Criterios</h4>
+                <div class="input-field col s12 m12" style="margin-top: 0px">
+                  <div class="input-field col s12 m4">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="nuevoPeligro.CantidadPeorConsecuencia" name="nuevoPeligroCantidadPeorConsecuencia" id="nuevoPeligroCantidadPeorConsecuencia" type="number" min="1" max="10" class="validate" required="" aria-required="true">
+                    <label class="active" for="nuevoPeligroCantidadPeorConsecuencia">Cantidad de Peores Consecuencias</label>
+                  </div>
+                  <div class="input-field col s12 m12" ng-repeat="consecuencia in nuevoPeligro.PeorConsecuencia track by $index">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input ng-model="nuevoPeligro.PeorConsecuencia[$index]" name="{{'nuevoPeligroPeorConsecuencia'+$index}}" id="{{'nuevoPeligroPeorConsecuencia'+$index}}" type="text" class="validate" required="" aria-required="true">
+                    <label class="active" for="{{'nuevoPeligroPeorConsecuencia'+$index}}">Peor Consecuencia {{$index+1}}</label>
+                  </div>
+                </div>
+                <div class="divider" style="width: 100%"></div>
+                <h4 class="header2">Existencia, Requisito Legal</h4>
+                <div class="input-field col s12 m12">
+                  <!-- <p> -->
+                    <input type="radio" ng-model="nuevoPeligro.Requisito" id="nuevoPeligroRequisitoSi" value="si" data-error=".errorTxt" name="nuevoPeligroRequisito" required="" aria-required="true" class="valid" aria-describedby="cgender-error">
+                    <label for="nuevoPeligroRequisitoSi">Si</label>
+                  <!-- </p> -->
+                  <!-- <p> -->
+                    <input type="radio" ng-model="nuevoPeligro.Requisito" id="nuevoPeligroRequisitoNo" value="no" name="nuevoPeligroRequisito" class="valid">
+                    <label for="nuevoPeligroRequisitoNo">No</label>
+                  <!-- </p> -->
+                  <div>
+                    <div class="errorTxt"><div id="cgender-error" class="error" style="display: none;"></div></div>
+                  </div>
+                </div>
+
+                <div class="divider" style="width: 100%"></div>
+                <div class="input-field col s12" style="margin-bottom: 10px;">                
+                <button ng-click="siguiente()" class="btn cyan waves-effect waves-light right" type="submit" name="action">Agregar
+                    <i class="mdi-image-navigate-next right"></i>
+                  </button>
+                <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+                  <i class="mdi-image-navigate-before left"></i>
+                </button>
+                </div> 
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
+<!--end container-->
+
+</section>
+<!-- END CONTENT -->

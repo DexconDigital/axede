@@ -1,0 +1,111 @@
+      <section id="content">
+        <div id="breadcrumbs-wrapper">
+		  <div class="container">
+		    <div class="row">
+		      <div class="col s12 m12 l12">
+		        <ol class="breadcrumbs">
+		            <li>Nuevo</li>
+		            <li class="active">{{clickedNorma.Nombre}}</li>
+		        </ol>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+        <div class="divider"></div>
+            <!--Basic Form-->
+            <div id="basic-form" class="section">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <div class="card-panel">
+                    <h4 class="header2">Seleccione la Empresa</h4>
+                    <div class="row">
+                      <form class="col s12 formValidate" novalidate id="formValidate">
+                      	<div class="row">
+							<div class="input-field col s12 m6">
+								<i class="mdi-action-home prefix"></i>
+								<select id="selectListaEmpresas" name="selectListaEmpresas" ng-model="nuevoProyecto.Empresa">
+								  <option value="" disabled selected>Seleccione la Empresa</option>
+								  <option ng-repeat="empresa in empresas" value="{{empresa.Id}}">{{empresa.Nombre}}</option>
+								</select>
+							</div>  
+							<div class="input-field col s12 m6">
+								<i class="mdi-action-home prefix"></i>
+								<select id="selectListaContratos" name="selectListaContratos">
+								  <option value="" disabled selected>Seleccione un Contrato Anterior</option>
+								  <option value="0">Nuevo</option>
+								  <option ng-repeat="contrato in contratos" value="{{contrato.Id}}">{{contrato.NoContrato}}</option>
+								</select>
+							</div>  
+							<div class="input-field col s12 m4">
+								<i class="mdi-action-account-circle prefix"></i>
+								<input ng-model="nuevoProyecto.NoContrato" name="nuevoProyectoNoContrato" id="nuevoProyectoNoContrato" type="text" class="validate" required="" aria-required="true">
+								<label for="nuevoProyectoNoContrato">N° de Contrato / Orden de Servicio (OS)</label>
+							</div>
+							<div class="input-field col s12 m10">
+								<i class="mdi-editor-mode-edit prefix"></i>
+								<textarea ng-model="nuevoProyecto.DetalleContrato" name="nuevoProyectoDetalleContrato" id="nuevoProyectoDetalleContrato" type="text" class="validate materialize-textarea" required="" aria-required="true"></textarea>
+								<label for="nuevoProyectoDetalleContrato" class="">Detalles del contrato</label>
+							</div>
+							<div class="divider" style="width: 100%"></div>
+							<h4 class="header2">Responsable</h4>
+							<div class="input-field col s12 m12">
+								<i class="mdi-action-account-circle prefix"></i>
+								<input ng-model="nuevoProyecto.Responsable" name="nuevoProyectoNombre" id="nuevoProyectoNombre" type="text" class="validate" required="" aria-required="true">
+								<label for="nuevoProyectoNombre">Nombre y Apellidos</label>
+							</div>
+							<div class="input-field col s12 m4">
+								<i class="mdi-action-account-circle prefix"></i>
+								<input ng-model="nuevoProyecto.Cargo" name="nuevoProyectoCargo" id="nuevoProyectoCargo" type="text" class="validate" required="" aria-required="true">
+								<label for="nuevoProyectoCargo">Cargo</label>
+							</div>
+							<div class="input-field col s12 m4">
+								<i class="mdi-action-account-circle prefix"></i>
+								<input ng-model="nuevoProyecto.Cedula" name="nuevoProyectoCedula" id="nuevoProyectoCedula" type="text" class="validate" required="" aria-required="true">
+								<label for="nuevoProyectoCedula">Cedula</label>
+							</div>
+							<div class="divider" style="width: 100%"></div>
+							<h4 class="header2">Fechas</h4>
+							<div class="left col s12 m12 l12">
+								<div class="input-field col s12 m3">
+			                    <input type="date" class="datepicker1" name="fecha1" id="fecha1">
+			                    <label for="fecha1">FECHA INICIO</label>
+			                  </div>
+			                  <div class="input-field col s12 m3">
+			                    <input type="date" class="datepicker2" name="fecha2" id="fecha2">
+			                    <label for="fecha2">FECHA FINAL</label>
+			                  </div>
+			                </div>
+							<div class="divider" style="width: 100%"></div>
+							<h4 class="header2">EQUIPO DE TRABAJO DESIGNADO</h4>
+							<div class="col s12">
+			                  <div class="col s6" ng-repeat="profesional in profesionales">
+			                    <input type="checkbox" ng-model="nuevoProyecto.profesional[profesional.Id]" class="checkbox valid" id="nuevoProyectoTrabajador{{$index}}" name="nuevoProyectoTrabajador{{$index}}">
+			                    <label for="nuevoProyectoTrabajador{{$index}}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="{{toHtml(profesional.Especialidades)}}">{{profesional.Nombre}}</label>
+			                  </div>
+			                </div>
+	                    </div>  
+	                    <div class="row">
+	                        <div class="input-field col s12 m12 l12">
+			                  <button ng-click="crear()" class="btn blue lighten-1 waves-effect waves-light right" type="submit" name="action">Crear
+			                    <i class="mdi-content-send right"></i>
+			                  </button>
+			                  <button ng-click="anterior()" class="btn cyan waves-effect waves-light left" type="submit" name="action">Anterior
+			                  	<i class="mdi-image-navigate-before left"></i>
+			                  </button>
+			                </div>
+	                    </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+  <!--end container-->
+
+
+
+
+  </section>
+  <!-- END CONTENT -->

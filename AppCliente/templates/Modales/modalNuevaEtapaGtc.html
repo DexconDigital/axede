@@ -1,0 +1,54 @@
+<div style="padding-bottom: 0px" class="modal-content">
+  <div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card-panel">
+        <h4 class="header2">{{contentModal}} Etapa</h4>
+        <div class="divider" style="width: 100%"></div>
+        <div style="" class="row">
+          <form class="col s12" novalidate ng-submit="agregarEtapa(contentModal)" id="formValidate">
+            <div class="row">
+              <h4 class="header2" style="margin-top: 10px;">Procesos</h4>
+              <div class="col s12" ng-repeat="macroproceso in listaProcesos">
+                <input ng-click="checkMacroproceso(macroproceso.Id)" type="checkbox" ng-model="nuevaEtapa.Procesos[macroproceso.Id]" class="checkbox valid" id="nuevaEtapaProceso{{macroproceso.Id}}" name="nuevaEtapaProceso{{macroproceso.Id}}">
+                <label for="nuevaEtapaProceso{{macroproceso.Id}}">{{macroproceso.Nombre}}</label>
+                <!-- <div class="col s12 darken"><i class="mdi-image-timer-auto"></i> {{macroproceso.Nombre}}</div> -->
+                <div class="col s12" ng-repeat="proceso in macroproceso.Procesos" ng-if="macroproceso.Procesos[0].Nombre != null" >
+                  <input ng-click="checkProceso(macroproceso.Id,proceso.Id)" type="checkbox" ng-model="nuevaEtapa.Procesos[proceso.Id]" class="checkbox valid" id="nuevaEtapaProceso{{proceso.Id}}" name="nuevaEtapaProceso{{proceso.Id}}">
+                  <label for="nuevaEtapaProceso{{proceso.Id}}">{{proceso.Nombre}}</label>
+
+                  <!-- <div class="col s12 grey-text darken" ng-if="proceso.SubProcesos[0].Nombre != null"><i class="mdi-image-timer-auto"></i> {{proceso.Nombre}}</div> -->
+                  <div class="col s12" ng-repeat="subproceso in proceso.SubProcesos" ng-if="proceso.SubProcesos[0].Nombre != null">
+                    <input ng-click="checkSubProceso(macroproceso.Id,proceso.Id,subproceso.Id)" type="checkbox" ng-model="nuevaEtapa.Procesos[subproceso.Id]" class="checkbox valid" id="nuevaEtapaProceso{{subproceso.Id}}" name="nuevaEtapaProceso{{subproceso.Id}}">
+                    <label for="nuevaEtapaProceso{{subproceso.Id}}">{{subproceso.Nombre}}</label>
+                  </div>
+<!--                   <div class="col s12" ng-if="proceso.SubProcesos[0].Nombre == null">
+                    <input type="checkbox" ng-model="nuevaEtapa.Procesos[proceso.Id]" class="checkbox valid" id="nuevaEtapaProceso{{proceso.Id}}" name="nuevaEtapaProceso{{proceso.Id}}">
+                    <label for="nuevaEtapaProceso{{proceso.Id}}">{{proceso.Nombre}}</label>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <h4 class="header2" style="margin-top: 10px;">Zonas</h4>
+                <div class="col s4" ng-repeat="zona in listaZonas">
+                  <input type="checkbox" ng-model="nuevaEtapa.Zonas[zona.Id]" class="checkbox valid" id="nuevaEtapaZona{{$index}}" name="nuevaEtapaZona{{$index}}">
+                  <label for="nuevaEtapaZona{{$index}}">{{zona.Nombre}}</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row">
+                <div class="input-field col s12">
+                  <button id="crear" class="btn cyan waves-effect waves-light right" type="submit" name="action">{{contentModal}}
+                    <i class="mdi-content-send right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
